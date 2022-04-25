@@ -1,0 +1,83 @@
+PODS:
+  - Alamofire (5.4.4)
+  - AlamofireImage (4.2.0):
+    - Alamofire (~> 5.4)
+  - Differentiator (5.0.0)
+  - R.swift (6.1.0):
+    - R.swift.Library (~> 5.3.0)
+  - R.swift.Library (5.3.0)
+  - ReachabilitySwift (5.0.0)
+  - RxAlamofire (6.1.1):
+    - RxAlamofire/Core (= 6.1.1)
+  - RxAlamofire/Core (6.1.1):
+    - Alamofire (~> 5.4)
+    - RxSwift (~> 6.0)
+  - RxCocoa (6.2.0):
+    - RxRelay (= 6.2.0)
+    - RxSwift (= 6.2.0)
+  - RxDataSources (5.0.0):
+    - Differentiator (~> 5.0)
+    - RxCocoa (~> 6.0)
+    - RxSwift (~> 6.0)
+  - RxOptional (5.0.2):
+    - RxCocoa (~> 6.0)
+    - RxSwift (~> 6.0)
+  - RxRelay (6.2.0):
+    - RxSwift (= 6.2.0)
+  - RxSwift (6.2.0)
+  - Toast-Swift (5.0.1)
+
+DEPENDENCIES:
+  - Alamofire (~> 5.4.4)
+  - AlamofireImage (~> 4.2.0)
+  - R.swift (~> 6.1.0)
+  - ReachabilitySwift (~> 5.0.0)
+  - RxAlamofire (~> 6.1.0)
+  - RxCocoa (~> 6.2.0)
+  - RxDataSources (~> 5.0.0)
+  - RxOptional (~> 5.0.0)
+  - RxSwift (~> 6.2.0)
+  - Toast-Swift (from `https://github.com/myloimellanc/Toast-Swift.git`)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - AlamofireImage
+    - Differentiator
+    - R.swift
+    - R.swift.Library
+    - ReachabilitySwift
+    - RxAlamofire
+    - RxCocoa
+    - RxDataSources
+    - RxOptional
+    - RxRelay
+    - RxSwift
+
+EXTERNAL SOURCES:
+  Toast-Swift:
+    :git: https://github.com/myloimellanc/Toast-Swift.git
+
+CHECKOUT OPTIONS:
+  Toast-Swift:
+    :commit: 976cbd6e1579e75ec36d9600428b22733b272c4c
+    :git: https://github.com/myloimellanc/Toast-Swift.git
+
+SPEC CHECKSUMS:
+  Alamofire: f3b09a368f1582ab751b3fff5460276e0d2cf5c9
+  AlamofireImage: 34a2d90b0e5fe6a5605f85ae4b7b01e784c60192
+  Differentiator: e8497ceab83c1b10ca233716d547b9af21b9344d
+  R.swift: ec98ff71c4ab2f6fd01dd077e5afd15e63a4834c
+  R.swift.Library: 0fc583cb55a99e28901299cc451614cad1161962
+  ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
+  RxAlamofire: beb75a1c452d0de225651db4903f5d29d034a620
+  RxCocoa: 4baf94bb35f2c0ab31bc0cb9f1900155f646ba42
+  RxDataSources: aa47cc1ed6c500fa0dfecac5c979b723542d79cf
+  RxOptional: 3664964c96b69dd20c9cf78bdfe546615e26eca8
+  RxRelay: e72dbfd157807478401ef1982e1c61c945c94b2f
+  RxSwift: d356ab7bee873611322f134c5f9ef379fa183d8f
+  Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
+
+PODFILE CHECKSUM: 2516c412ba2123cf6c1a38b8104b68d78086f21e
+
+COCOAPODS: 1.11.3

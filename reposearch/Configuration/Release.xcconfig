@@ -5,5 +5,9 @@
 //  Created by mellancmyloi on 2022/04/25.
 //
 
+
+#include "Pods/Target Support Files/Pods-reposearch/Pods-reposearch.release.xcconfig"
+
+
 RS_DISPLAY_NAME = Reposearch
 RS_BUNDLE_IDENTIFIER = com.mellanc.reposearch
