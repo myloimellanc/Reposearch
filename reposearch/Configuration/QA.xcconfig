@@ -4,3 +4,6 @@
 //
 //  Created by mellancmyloi on 2022/04/25.
 //
+
+RS_DISPLAY_NAME = RS_QA
+RS_BUNDLE_IDENTIFIER = com.mellanc.reposearch-qa
