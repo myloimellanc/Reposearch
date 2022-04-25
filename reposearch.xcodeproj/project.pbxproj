@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		14E54C729A49556590117AAB /* libPods-reposearch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F96B30A4814770DAD34EFDAB /* libPods-reposearch.a */; };
 		BF1692AE2816CFF400A06B83 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BF1692B02816CFF400A06B83 /* Localizable.strings */; };
+		BF4DA3A62816E8F400462BAD /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4DA3A52816E8F400462BAD /* R.generated.swift */; };
 		BFA5514B2816BCE300CF01D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA5514A2816BCE300CF01D2 /* AppDelegate.swift */; };
 		BFA5514F2816BCE300CF01D2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA5514E2816BCE300CF01D2 /* ViewController.swift */; };
 		BFA551542816BCE400CF01D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFA551532816BCE400CF01D2 /* Assets.xcassets */; };
@@ -35,6 +36,7 @@
 		48FD9C7F8AD80A0DCA63D828 /* Pods-reposearch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reposearch.debug.xcconfig"; path = "Target Support Files/Pods-reposearch/Pods-reposearch.debug.xcconfig"; sourceTree = "<group>"; };
 		910262E2E2025E9DB15CED10 /* Pods-reposearch.qa.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reposearch.qa.xcconfig"; path = "Target Support Files/Pods-reposearch/Pods-reposearch.qa.xcconfig"; sourceTree = "<group>"; };
 		BF1692B12816CFFE00A06B83 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
+		BF4DA3A52816E8F400462BAD /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		BFA551472816BCE300CF01D2 /* reposearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = reposearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFA5514A2816BCE300CF01D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFA5514E2816BCE300CF01D2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -82,7 +84,6 @@
 				42DFDA38E4EC70C37D199277 /* Pods-reposearch.staging.xcconfig */,
 				08FCC555569D4490165583F9 /* Pods-reposearch.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -129,6 +130,7 @@
 		BFC1E8C12816BE8E00874BA4 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				BF4DA3A52816E8F400462BAD /* R.generated.swift */,
 				BF1692B02816CFF400A06B83 /* Localizable.strings */,
 				BFA551532816BCE400CF01D2 /* Assets.xcassets */,
 			);
@@ -174,6 +176,7 @@
 			buildConfigurationList = BFA5515B2816BCE400CF01D2 /* Build configuration list for PBXNativeTarget "reposearch" */;
 			buildPhases = (
 				6F14404D5B1F7EBB68D1B5B3 /* [CP] Check Pods Manifest.lock */,
+				BF4DA3A42816E81800462BAD /* Initialize R.swift Resource */,
 				BFA551432816BCE300CF01D2 /* Sources */,
 				BFA551442816BCE300CF01D2 /* Frameworks */,
 				BFA551452816BCE300CF01D2 /* Resources */,
@@ -289,6 +292,25 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		BF4DA3A42816E81800462BAD /* Initialize R.swift Resource */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Initialize R.swift Resource";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/reposearch/Resource/R.generated.swift\"\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -298,6 +320,7 @@
 			files = (
 				BFA5514F2816BCE300CF01D2 /* ViewController.swift in Sources */,
 				BFA5514B2816BCE300CF01D2 /* AppDelegate.swift in Sources */,
+				BF4DA3A62816E8F400462BAD /* R.generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
