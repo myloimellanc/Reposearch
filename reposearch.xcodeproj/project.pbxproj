@@ -8,15 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		14E54C729A49556590117AAB /* libPods-reposearch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F96B30A4814770DAD34EFDAB /* libPods-reposearch.a */; };
+		BF0250582817FB5600F3683F /* RSNetworkMockup.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0250562817FB3500F3683F /* RSNetworkMockup.swift */; };
 		BF1692AE2816CFF400A06B83 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BF1692B02816CFF400A06B83 /* Localizable.strings */; };
+		BF3BEBFA2817E4E9008B8546 /* RSNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3BEBF92817E4E9008B8546 /* RSNetwork.swift */; };
+		BF3BEBFE2817EC28008B8546 /* NetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3BEBFD2817EC28008B8546 /* NetworkTests.swift */; };
 		BF4DA3A62816E8F400462BAD /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4DA3A52816E8F400462BAD /* R.generated.swift */; };
+		BF7416842818159200B70CD8 /* SearchRepositoryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7416832818159200B70CD8 /* SearchRepositoryResponse.swift */; };
+		BF7416862818172600B70CD8 /* RSAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7416852818172600B70CD8 /* RSAPI.swift */; };
+		BF74168E2818210000B70CD8 /* RSAPIMockup.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF74168C281820FB00B70CD8 /* RSAPIMockup.swift */; };
+		BF7416902818230600B70CD8 /* APITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF74168F2818230600B70CD8 /* APITests.swift */; };
 		BFA5514B2816BCE300CF01D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA5514A2816BCE300CF01D2 /* AppDelegate.swift */; };
 		BFA5514F2816BCE300CF01D2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA5514E2816BCE300CF01D2 /* ViewController.swift */; };
 		BFA551542816BCE400CF01D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFA551532816BCE400CF01D2 /* Assets.xcassets */; };
 		BFDBC4FD2816DE0C003B5E21 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFDBC4FB2816DE0C003B5E21 /* LaunchScreen.storyboard */; };
 		BFDBC4FE2816DE0C003B5E21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFDBC4FC2816DE0C003B5E21 /* Main.storyboard */; };
 		BFE2D9C72816C3AC00CCC215 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = BFAFB17F2816C0FE00BA38D2 /* README.md */; };
-		BFE2D9D62816C4D100CCC215 /* reposearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE2D9D52816C4D100CCC215 /* reposearchTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,8 +41,15 @@
 		42DFDA38E4EC70C37D199277 /* Pods-reposearch.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reposearch.staging.xcconfig"; path = "Target Support Files/Pods-reposearch/Pods-reposearch.staging.xcconfig"; sourceTree = "<group>"; };
 		48FD9C7F8AD80A0DCA63D828 /* Pods-reposearch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reposearch.debug.xcconfig"; path = "Target Support Files/Pods-reposearch/Pods-reposearch.debug.xcconfig"; sourceTree = "<group>"; };
 		910262E2E2025E9DB15CED10 /* Pods-reposearch.qa.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reposearch.qa.xcconfig"; path = "Target Support Files/Pods-reposearch/Pods-reposearch.qa.xcconfig"; sourceTree = "<group>"; };
+		BF0250562817FB3500F3683F /* RSNetworkMockup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSNetworkMockup.swift; sourceTree = "<group>"; };
 		BF1692B12816CFFE00A06B83 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
+		BF3BEBF92817E4E9008B8546 /* RSNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSNetwork.swift; sourceTree = "<group>"; };
+		BF3BEBFD2817EC28008B8546 /* NetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTests.swift; sourceTree = "<group>"; };
 		BF4DA3A52816E8F400462BAD /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		BF7416832818159200B70CD8 /* SearchRepositoryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepositoryResponse.swift; sourceTree = "<group>"; };
+		BF7416852818172600B70CD8 /* RSAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSAPI.swift; sourceTree = "<group>"; };
+		BF74168C281820FB00B70CD8 /* RSAPIMockup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSAPIMockup.swift; sourceTree = "<group>"; };
+		BF74168F2818230600B70CD8 /* APITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITests.swift; sourceTree = "<group>"; };
 		BFA551472816BCE300CF01D2 /* reposearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = reposearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFA5514A2816BCE300CF01D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFA5514E2816BCE300CF01D2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -52,7 +65,6 @@
 		BFE2D9CC2816C3DE00CCC215 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		BFE2D9CE2816C47300CCC215 /* Test.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Test.xcconfig; sourceTree = "<group>"; };
 		BFE2D9D32816C4D100CCC215 /* reposearchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = reposearchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BFE2D9D52816C4D100CCC215 /* reposearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reposearchTests.swift; sourceTree = "<group>"; };
 		F96B30A4814770DAD34EFDAB /* libPods-reposearch.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-reposearch.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -95,6 +107,41 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		BF0250592817FBC700F3683F /* Mockup */ = {
+			isa = PBXGroup;
+			children = (
+				BF0250562817FB3500F3683F /* RSNetworkMockup.swift */,
+				BF74168C281820FB00B70CD8 /* RSAPIMockup.swift */,
+			);
+			path = Mockup;
+			sourceTree = "<group>";
+		};
+		BF3BEBF72817DE2E008B8546 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				BF3BEBF82817DE3B008B8546 /* Remote */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		BF3BEBF82817DE3B008B8546 /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				BF7416822818156A00B70CD8 /* Response */,
+				BF7416852818172600B70CD8 /* RSAPI.swift */,
+				BF3BEBF92817E4E9008B8546 /* RSNetwork.swift */,
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
+		BF7416822818156A00B70CD8 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				BF7416832818159200B70CD8 /* SearchRepositoryResponse.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
 		BFA5513E2816BCE300CF01D2 = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +169,7 @@
 				BFC1E8C42816BF5000874BA4 /* Info.plist */,
 				BFC1E8C12816BE8E00874BA4 /* Resource */,
 				BFE2D9C52816C35900CCC215 /* Configuration */,
+				BF3BEBF72817DE2E008B8546 /* Data */,
 				BFE2D9E52816C8F800CCC215 /* UI */,
 			);
 			path = reposearch;
@@ -152,7 +200,9 @@
 		BFE2D9D42816C4D100CCC215 /* reposearchTests */ = {
 			isa = PBXGroup;
 			children = (
-				BFE2D9D52816C4D100CCC215 /* reposearchTests.swift */,
+				BF0250592817FBC700F3683F /* Mockup */,
+				BF3BEBFD2817EC28008B8546 /* NetworkTests.swift */,
+				BF74168F2818230600B70CD8 /* APITests.swift */,
 			);
 			path = reposearchTests;
 			sourceTree = "<group>";
@@ -318,8 +368,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF7416842818159200B70CD8 /* SearchRepositoryResponse.swift in Sources */,
 				BFA5514F2816BCE300CF01D2 /* ViewController.swift in Sources */,
+				BF0250582817FB5600F3683F /* RSNetworkMockup.swift in Sources */,
+				BF74168E2818210000B70CD8 /* RSAPIMockup.swift in Sources */,
+				BF3BEBFA2817E4E9008B8546 /* RSNetwork.swift in Sources */,
 				BFA5514B2816BCE300CF01D2 /* AppDelegate.swift in Sources */,
+				BF7416862818172600B70CD8 /* RSAPI.swift in Sources */,
 				BF4DA3A62816E8F400462BAD /* R.generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -328,7 +383,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BFE2D9D62816C4D100CCC215 /* reposearchTests.swift in Sources */,
+				BF7416902818230600B70CD8 /* APITests.swift in Sources */,
+				BF3BEBFE2817EC28008B8546 /* NetworkTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
