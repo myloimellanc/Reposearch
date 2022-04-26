@@ -13,6 +13,10 @@
 		BF3BEBFA2817E4E9008B8546 /* RSNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3BEBF92817E4E9008B8546 /* RSNetwork.swift */; };
 		BF3BEBFE2817EC28008B8546 /* NetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3BEBFD2817EC28008B8546 /* NetworkTests.swift */; };
 		BF4DA3A62816E8F400462BAD /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4DA3A52816E8F400462BAD /* R.generated.swift */; };
+		BF7416842818159200B70CD8 /* SearchRepositoryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7416832818159200B70CD8 /* SearchRepositoryResponse.swift */; };
+		BF7416862818172600B70CD8 /* RSAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7416852818172600B70CD8 /* RSAPI.swift */; };
+		BF74168E2818210000B70CD8 /* APIMockup.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF74168C281820FB00B70CD8 /* APIMockup.swift */; };
+		BF7416902818230600B70CD8 /* APITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF74168F2818230600B70CD8 /* APITests.swift */; };
 		BFA5514B2816BCE300CF01D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA5514A2816BCE300CF01D2 /* AppDelegate.swift */; };
 		BFA5514F2816BCE300CF01D2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA5514E2816BCE300CF01D2 /* ViewController.swift */; };
 		BFA551542816BCE400CF01D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFA551532816BCE400CF01D2 /* Assets.xcassets */; };
@@ -42,6 +46,10 @@
 		BF3BEBF92817E4E9008B8546 /* RSNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSNetwork.swift; sourceTree = "<group>"; };
 		BF3BEBFD2817EC28008B8546 /* NetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTests.swift; sourceTree = "<group>"; };
 		BF4DA3A52816E8F400462BAD /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		BF7416832818159200B70CD8 /* SearchRepositoryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepositoryResponse.swift; sourceTree = "<group>"; };
+		BF7416852818172600B70CD8 /* RSAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSAPI.swift; sourceTree = "<group>"; };
+		BF74168C281820FB00B70CD8 /* APIMockup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIMockup.swift; sourceTree = "<group>"; };
+		BF74168F2818230600B70CD8 /* APITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITests.swift; sourceTree = "<group>"; };
 		BFA551472816BCE300CF01D2 /* reposearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = reposearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFA5514A2816BCE300CF01D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFA5514E2816BCE300CF01D2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				BF0250562817FB3500F3683F /* NetworkMockup.swift */,
+				BF74168C281820FB00B70CD8 /* APIMockup.swift */,
 			);
 			path = Mockup;
 			sourceTree = "<group>";
@@ -118,9 +127,19 @@
 		BF3BEBF82817DE3B008B8546 /* Remote */ = {
 			isa = PBXGroup;
 			children = (
+				BF7416822818156A00B70CD8 /* Response */,
+				BF7416852818172600B70CD8 /* RSAPI.swift */,
 				BF3BEBF92817E4E9008B8546 /* RSNetwork.swift */,
 			);
 			path = Remote;
+			sourceTree = "<group>";
+		};
+		BF7416822818156A00B70CD8 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				BF7416832818159200B70CD8 /* SearchRepositoryResponse.swift */,
+			);
+			path = Response;
 			sourceTree = "<group>";
 		};
 		BFA5513E2816BCE300CF01D2 = {
@@ -183,6 +202,7 @@
 			children = (
 				BF0250592817FBC700F3683F /* Mockup */,
 				BF3BEBFD2817EC28008B8546 /* NetworkTests.swift */,
+				BF74168F2818230600B70CD8 /* APITests.swift */,
 			);
 			path = reposearchTests;
 			sourceTree = "<group>";
@@ -348,10 +368,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF7416842818159200B70CD8 /* SearchRepositoryResponse.swift in Sources */,
 				BFA5514F2816BCE300CF01D2 /* ViewController.swift in Sources */,
 				BF0250582817FB5600F3683F /* NetworkMockup.swift in Sources */,
+				BF74168E2818210000B70CD8 /* APIMockup.swift in Sources */,
 				BF3BEBFA2817E4E9008B8546 /* RSNetwork.swift in Sources */,
 				BFA5514B2816BCE300CF01D2 /* AppDelegate.swift in Sources */,
+				BF7416862818172600B70CD8 /* RSAPI.swift in Sources */,
 				BF4DA3A62816E8F400462BAD /* R.generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -360,6 +383,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF7416902818230600B70CD8 /* APITests.swift in Sources */,
 				BF3BEBFE2817EC28008B8546 /* NetworkTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

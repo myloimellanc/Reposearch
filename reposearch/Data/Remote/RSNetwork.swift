@@ -11,6 +11,9 @@ import Alamofire
 import RxAlamofire
 
 
+let RSNetworkTimeoutInterval: TimeInterval = 10.0
+
+
 typealias RSHTTPMethod = HTTPMethod
 typealias RSURLConvertible = URLConvertible
 
@@ -73,7 +76,7 @@ final class RSNetwork {
     private init() {
         let configuration: URLSessionConfiguration = .default
         configuration.headers = Alamofire.HTTPHeaders.default
-        configuration.timeoutIntervalForRequest = 30.0
+        configuration.timeoutIntervalForRequest = RSNetworkTimeoutInterval
         
         let session = Alamofire.Session(configuration: configuration)
         self.session = session
