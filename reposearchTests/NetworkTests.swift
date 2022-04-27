@@ -29,7 +29,7 @@ class NetworkTests: XCTestCase {
                 expectation.fulfill()
                 
             }, onFailure: { error in
-                XCTFail("\(#function), \(error.localizedDescription)")
+                XCTFail(error.localizedDescription)
             })
         
         defer {
