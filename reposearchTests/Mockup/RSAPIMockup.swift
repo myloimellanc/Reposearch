@@ -15,7 +15,11 @@ final class RSAPIMockup {
 
 
 extension RSAPIMockup: RSAPIInterface {
-    func searchRepositories(text: String) -> Single<SearchRepositoriesResponse> {
+    func searchRepositories(query: String,
+                            sort: RSSearchSort,
+                            order: RSSearchOrder,
+                            perPage: Int64,
+                            page: Int64) -> Single<SearchRepositoriesResponse> {
         let apiUrl = RSAPIURL.searchReposiroties
         guard let data = apiUrl.responseMockup(method: apiUrl.method) else {
             return .error(RSError.default("\(#function)")) 

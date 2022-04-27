@@ -23,7 +23,11 @@ class APITests: XCTestCase {
 
     func testAPIs() throws {
         let apiVoids: [Single<Void>] = [
-            RSAPIFactory.instance.searchRepositories(text: "")
+            RSAPIFactory.instance.searchRepositories(query: "",
+                                                     sort: .bestMatch,
+                                                     order: .desc,
+                                                     perPage: 30,
+                                                     page: 1)
                 .mapToVoid()
         ]
         
