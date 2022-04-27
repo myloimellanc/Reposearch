@@ -20,5 +20,7 @@ Github Repository Search for iOS
 - 목표 사항: 앱 기능의 기본적인 최소 요구사항 구현 
     - 도메인 영역을 제외한 데이터 + 뷰 영역 기본 작업
     - API의 검색어 패러미터만 작업
+    - UISearchController를 포함한 NavigationItem을 기반으로 하는 테이블 뷰
+        - 1페이지 한정 표기 
 - 작업 특이사항
     - github api 타임아웃 10초 제한

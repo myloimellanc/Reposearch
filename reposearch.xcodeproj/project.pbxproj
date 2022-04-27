@@ -30,7 +30,6 @@
 		BFCA9ABE28184487002E9061 /* RSSearchListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCA9ABD28184487002E9061 /* RSSearchListViewModel.swift */; };
 		BFCA9AC028184494002E9061 /* RSSearchTableViewCellDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCA9ABF28184494002E9061 /* RSSearchTableViewCellDefault.swift */; };
 		BFDBC4FD2816DE0C003B5E21 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFDBC4FB2816DE0C003B5E21 /* LaunchScreen.storyboard */; };
-		BFE2D9C72816C3AC00CCC215 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = BFAFB17F2816C0FE00BA38D2 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -161,6 +160,7 @@
 		BFA5513E2816BCE300CF01D2 = {
 			isa = PBXGroup;
 			children = (
+				BFAFB17F2816C0FE00BA38D2 /* README.md */,
 				BFA551492816BCE300CF01D2 /* reposearch */,
 				BFE2D9D42816C4D100CCC215 /* reposearchTests */,
 				BFA551482816BCE300CF01D2 /* Products */,
@@ -181,7 +181,6 @@
 		BFA551492816BCE300CF01D2 /* reposearch */ = {
 			isa = PBXGroup;
 			children = (
-				BFAFB17F2816C0FE00BA38D2 /* README.md */,
 				BFC1E8C42816BF5000874BA4 /* Info.plist */,
 				BFC1E8C12816BE8E00874BA4 /* Resource */,
 				BFE2D9C52816C35900CCC215 /* Configuration */,
@@ -336,7 +335,6 @@
 			files = (
 				BF1692AE2816CFF400A06B83 /* Localizable.strings in Resources */,
 				BFDBC4FD2816DE0C003B5E21 /* LaunchScreen.storyboard in Resources */,
-				BFE2D9C72816C3AC00CCC215 /* README.md in Resources */,
 				BFA551542816BCE400CF01D2 /* Assets.xcassets in Resources */,
 				BFCA9AB028184135002E9061 /* Search.storyboard in Resources */,
 			);
