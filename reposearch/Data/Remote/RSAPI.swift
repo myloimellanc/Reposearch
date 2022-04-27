@@ -31,7 +31,11 @@ enum RSAPIURL: String, CaseIterable {
 
 
 protocol RSAPIInterface {
-    func searchRepositories(text: String) -> Single<SearchRepositoriesResponse>
+    func searchRepositories(query: String,
+                            sort: RSSearchSort,
+                            order: RSSearchOrder,
+                            perPage: Int64,
+                            page: Int64) -> Single<SearchRepositoriesResponse>
 }
 
 
@@ -51,9 +55,43 @@ struct RSAPIFactory {
 
 
 struct RSAPI: RSAPIInterface {
-    func searchRepositories(text: String) -> Single<SearchRepositoriesResponse> {
+    func searchRepositories(query: String,
+                            sort: RSSearchSort,
+                            order: RSSearchOrder,
+                            perPage: Int64,
+                            page: Int64) -> Single<SearchRepositoriesResponse> {
+        let headers: Dictionary<String, String> = [
+            "accept": "application/vnd.github.v3+json"
+        ]
+        
         let apiUrl = RSAPIURL.searchReposiroties
-        return RSNetworkFactory.instance.urlRequest(apiUrl.url, apiUrl.method, parameters: ["q": text], headers: nil)
+        var url = apiUrl.url
+        
+        guard let encodedQuery = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
+            return .error(RSError.default("Query encode failed"))
+        }
+        
+        url.append("?q=\(encodedQuery)")
+        
+        if let sortParameter = sort.parameterValue {
+            url.append("&sort=\(sortParameter)&order=\(order.parameterValue)")
+        }
+        
+        url.append("&per_page=\(perPage)&page=\(page)")
+        
+        return RSNetworkFactory.instance.urlRequest(url, apiUrl.method, parameters: nil, headers: headers)
             .decode()
+        
+        
+        // TODO: Alamofire의 URLEncoded Request 요청에 패러미터가 정상적으로 포함되지 않는 문제 수정 필요
+//        let parameters: Dictionary<String, Any> = [
+//            "q": query,
+//            "sort": sort.parameterValue as Any,
+//            "order": order.parameterValue,
+//            "per_page": perPage,
+//            "page": page
+//        ]
+        
+//        return RSNetworkFactory.instance.urlRequest(apiUrl.url, apiUrl.method, parameters: parameters, headers: headers)
     }
 }

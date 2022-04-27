@@ -25,14 +25,17 @@ class RSSearchListViewModel: RSViewModel {
             .debounce(.seconds(1), scheduler: MainScheduler.asyncInstance)
             .filter { _, text in text.isEmpty != true }
             .flatMapLatest { _, text -> Observable<[SearchRepositoryResponse]> in
-                return RSAPIFactory.instance.searchRepositories(text: text)
+                return RSAPIFactory.instance.searchRepositories(query: text,
+                                                                sort: .bestMatch,
+                                                                order: .desc,
+                                                                perPage: 30,
+                                                                page: 1)
                     .asObservable()
                     .map { $0.items }
                     .catchErrorJustComplete()
             }
             .bind(to: self.repositories)
             .disposed(by: self.disposeBag)
-        
     }
 }
 

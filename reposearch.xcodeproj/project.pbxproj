@@ -33,6 +33,8 @@
 		BFCA9ABE28184487002E9061 /* RSSearchListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCA9ABD28184487002E9061 /* RSSearchListViewModel.swift */; };
 		BFCA9AC028184494002E9061 /* RSSearchTableViewCellDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCA9ABF28184494002E9061 /* RSSearchTableViewCellDefault.swift */; };
 		BFDBC4FD2816DE0C003B5E21 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFDBC4FB2816DE0C003B5E21 /* LaunchScreen.storyboard */; };
+		BFDDE99128197BCF00F3DA34 /* RSSearchSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDDE99028197BCF00F3DA34 /* RSSearchSort.swift */; };
+		BFDDE99328197C8100F3DA34 /* RSSearchOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDDE99228197C8100F3DA34 /* RSSearchOrder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +82,8 @@
 		BFCA9ABD28184487002E9061 /* RSSearchListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSearchListViewModel.swift; sourceTree = "<group>"; };
 		BFCA9ABF28184494002E9061 /* RSSearchTableViewCellDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSearchTableViewCellDefault.swift; sourceTree = "<group>"; };
 		BFDBC4FB2816DE0C003B5E21 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BFDDE99028197BCF00F3DA34 /* RSSearchSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSearchSort.swift; sourceTree = "<group>"; };
+		BFDDE99228197C8100F3DA34 /* RSSearchOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSearchOrder.swift; sourceTree = "<group>"; };
 		BFE2D9C62816C38A00CCC215 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		BFE2D9C82816C3C700CCC215 /* QA.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = QA.xcconfig; sourceTree = "<group>"; };
 		BFE2D9CA2816C3D500CCC215 /* Staging.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Staging.xcconfig; sourceTree = "<group>"; };
@@ -149,6 +153,7 @@
 		BF3BEBF72817DE2E008B8546 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				BFDDE98E28197BB000F3DA34 /* Local */,
 				BF3BEBF82817DE3B008B8546 /* Remote */,
 				BF112C8C281970E5003782B3 /* RSError.swift */,
 			);
@@ -230,6 +235,23 @@
 				BFCA9ABF28184494002E9061 /* RSSearchTableViewCellDefault.swift */,
 			);
 			path = Search;
+			sourceTree = "<group>";
+		};
+		BFDDE98E28197BB000F3DA34 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				BFDDE98F28197BBC00F3DA34 /* Constant */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		BFDDE98F28197BBC00F3DA34 /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				BFDDE99028197BCF00F3DA34 /* RSSearchSort.swift */,
+				BFDDE99228197C8100F3DA34 /* RSSearchOrder.swift */,
+			);
+			path = Constant;
 			sourceTree = "<group>";
 		};
 		BFE2D9C52816C35900CCC215 /* Configuration */ = {
@@ -431,6 +453,8 @@
 				BF3BEBFA2817E4E9008B8546 /* RSNetwork.swift in Sources */,
 				BFA5514B2816BCE300CF01D2 /* AppDelegate.swift in Sources */,
 				BF7416862818172600B70CD8 /* RSAPI.swift in Sources */,
+				BFDDE99128197BCF00F3DA34 /* RSSearchSort.swift in Sources */,
+				BFDDE99328197C8100F3DA34 /* RSSearchOrder.swift in Sources */,
 				BFCA9AAD281840C4002E9061 /* RSSearchNavigationController.swift in Sources */,
 				BF4DA3A62816E8F400462BAD /* R.generated.swift in Sources */,
 				BF112C8D281970E5003782B3 /* RSError.swift in Sources */,
