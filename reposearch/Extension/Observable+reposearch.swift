@@ -55,6 +55,15 @@ extension PrimitiveSequence where Trait == SingleTrait {
 extension PrimitiveSequence where Trait == SingleTrait, Element == Data {
     func decode<T: Codable>() -> Single<T> {
         return self
+            .do(onSuccess: { data in
+                DispatchQueue.global().async {
+                    if let jsonObject = try? JSONSerialization.jsonObject(with: data, options: .mutableContainers),
+                       let prettyData = try? JSONSerialization.data(withJSONObject: jsonObject, options: .prettyPrinted),
+                       let prettyString = String(data: prettyData, encoding: .utf8) {
+                        print(prettyString)
+                    }
+                }
+            })
             .map { try JSONDecoder().decode(T.self, from: $0) }
     }
 }

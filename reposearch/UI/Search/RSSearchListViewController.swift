@@ -50,10 +50,10 @@ extension RSSearchListViewController: UITableViewDataSource {
         }
         
         let data = datas[indexPath.row]
-        cell.ownerLabel.text = data.owner?.login ?? ""
+        cell.ownerLabel.text = data.owner ?? ""
         cell.titleLabel.text = data.name ?? ""
         cell.descriptionLabel.text = data.description ?? ""
-        cell.starLabel.text = data.stargazers_count?.description ?? ""
+        cell.starLabel.text = data.starCount?.description ?? ""
         
         return cell
     }
