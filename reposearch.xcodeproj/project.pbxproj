@@ -18,10 +18,18 @@
 		BF74168E2818210000B70CD8 /* RSAPIMockup.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF74168C281820FB00B70CD8 /* RSAPIMockup.swift */; };
 		BF7416902818230600B70CD8 /* APITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF74168F2818230600B70CD8 /* APITests.swift */; };
 		BFA5514B2816BCE300CF01D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA5514A2816BCE300CF01D2 /* AppDelegate.swift */; };
-		BFA5514F2816BCE300CF01D2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA5514E2816BCE300CF01D2 /* ViewController.swift */; };
 		BFA551542816BCE400CF01D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFA551532816BCE400CF01D2 /* Assets.xcassets */; };
+		BFCA9AAD281840C4002E9061 /* RSSearchNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCA9AAC281840C4002E9061 /* RSSearchNavigationController.swift */; };
+		BFCA9AB028184135002E9061 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFCA9AAF28184135002E9061 /* Search.storyboard */; };
+		BFCA9AB2281841AA002E9061 /* RSSearchContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCA9AB1281841AA002E9061 /* RSSearchContainerViewController.swift */; };
+		BFCA9AB4281841B8002E9061 /* RSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCA9AB3281841B8002E9061 /* RSViewController.swift */; };
+		BFCA9AB628184225002E9061 /* RSNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCA9AB528184225002E9061 /* RSNavigationController.swift */; };
+		BFCA9AB82818427A002E9061 /* RSViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCA9AB72818427A002E9061 /* RSViewModel.swift */; };
+		BFCA9ABA281843A0002E9061 /* RSSearchContainerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCA9AB9281843A0002E9061 /* RSSearchContainerViewModel.swift */; };
+		BFCA9ABC2818447E002E9061 /* RSSearchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCA9ABB2818447E002E9061 /* RSSearchListViewController.swift */; };
+		BFCA9ABE28184487002E9061 /* RSSearchListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCA9ABD28184487002E9061 /* RSSearchListViewModel.swift */; };
+		BFCA9AC028184494002E9061 /* RSSearchTableViewCellDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCA9ABF28184494002E9061 /* RSSearchTableViewCellDefault.swift */; };
 		BFDBC4FD2816DE0C003B5E21 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFDBC4FB2816DE0C003B5E21 /* LaunchScreen.storyboard */; };
-		BFDBC4FE2816DE0C003B5E21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFDBC4FC2816DE0C003B5E21 /* Main.storyboard */; };
 		BFE2D9C72816C3AC00CCC215 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = BFAFB17F2816C0FE00BA38D2 /* README.md */; };
 /* End PBXBuildFile section */
 
@@ -52,13 +60,21 @@
 		BF74168F2818230600B70CD8 /* APITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITests.swift; sourceTree = "<group>"; };
 		BFA551472816BCE300CF01D2 /* reposearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = reposearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFA5514A2816BCE300CF01D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BFA5514E2816BCE300CF01D2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BFA551532816BCE400CF01D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BFAFB17F2816C0FE00BA38D2 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		BFBE8D1A2816DFF600F398F8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BFC1E8C42816BF5000874BA4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BFCA9AAC281840C4002E9061 /* RSSearchNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSearchNavigationController.swift; sourceTree = "<group>"; };
+		BFCA9AAF28184135002E9061 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
+		BFCA9AB1281841AA002E9061 /* RSSearchContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSearchContainerViewController.swift; sourceTree = "<group>"; };
+		BFCA9AB3281841B8002E9061 /* RSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSViewController.swift; sourceTree = "<group>"; };
+		BFCA9AB528184225002E9061 /* RSNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSNavigationController.swift; sourceTree = "<group>"; };
+		BFCA9AB72818427A002E9061 /* RSViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSViewModel.swift; sourceTree = "<group>"; };
+		BFCA9AB9281843A0002E9061 /* RSSearchContainerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSearchContainerViewModel.swift; sourceTree = "<group>"; };
+		BFCA9ABB2818447E002E9061 /* RSSearchListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSearchListViewController.swift; sourceTree = "<group>"; };
+		BFCA9ABD28184487002E9061 /* RSSearchListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSearchListViewModel.swift; sourceTree = "<group>"; };
+		BFCA9ABF28184494002E9061 /* RSSearchTableViewCellDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSearchTableViewCellDefault.swift; sourceTree = "<group>"; };
 		BFDBC4FB2816DE0C003B5E21 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		BFDBC4FC2816DE0C003B5E21 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		BFE2D9C62816C38A00CCC215 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		BFE2D9C82816C3C700CCC215 /* QA.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = QA.xcconfig; sourceTree = "<group>"; };
 		BFE2D9CA2816C3D500CCC215 /* Staging.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Staging.xcconfig; sourceTree = "<group>"; };
@@ -171,6 +187,7 @@
 				BFE2D9C52816C35900CCC215 /* Configuration */,
 				BF3BEBF72817DE2E008B8546 /* Data */,
 				BFE2D9E52816C8F800CCC215 /* UI */,
+				BFA5514A2816BCE300CF01D2 /* AppDelegate.swift */,
 			);
 			path = reposearch;
 			sourceTree = "<group>";
@@ -183,6 +200,20 @@
 				BFA551532816BCE400CF01D2 /* Assets.xcassets */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		BFCA9AAE28184107002E9061 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				BFCA9AAF28184135002E9061 /* Search.storyboard */,
+				BFCA9AAC281840C4002E9061 /* RSSearchNavigationController.swift */,
+				BFCA9AB9281843A0002E9061 /* RSSearchContainerViewModel.swift */,
+				BFCA9AB1281841AA002E9061 /* RSSearchContainerViewController.swift */,
+				BFCA9ABD28184487002E9061 /* RSSearchListViewModel.swift */,
+				BFCA9ABB2818447E002E9061 /* RSSearchListViewController.swift */,
+				BFCA9ABF28184494002E9061 /* RSSearchTableViewCellDefault.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 		BFE2D9C52816C35900CCC215 /* Configuration */ = {
@@ -210,10 +241,11 @@
 		BFE2D9E52816C8F800CCC215 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				BFCA9AAE28184107002E9061 /* Search */,
 				BFDBC4FB2816DE0C003B5E21 /* LaunchScreen.storyboard */,
-				BFDBC4FC2816DE0C003B5E21 /* Main.storyboard */,
-				BFA5514A2816BCE300CF01D2 /* AppDelegate.swift */,
-				BFA5514E2816BCE300CF01D2 /* ViewController.swift */,
+				BFCA9AB528184225002E9061 /* RSNavigationController.swift */,
+				BFCA9AB72818427A002E9061 /* RSViewModel.swift */,
+				BFCA9AB3281841B8002E9061 /* RSViewController.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -303,10 +335,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF1692AE2816CFF400A06B83 /* Localizable.strings in Resources */,
-				BFDBC4FE2816DE0C003B5E21 /* Main.storyboard in Resources */,
 				BFDBC4FD2816DE0C003B5E21 /* LaunchScreen.storyboard in Resources */,
 				BFE2D9C72816C3AC00CCC215 /* README.md in Resources */,
 				BFA551542816BCE400CF01D2 /* Assets.xcassets in Resources */,
+				BFCA9AB028184135002E9061 /* Search.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,13 +400,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFCA9AC028184494002E9061 /* RSSearchTableViewCellDefault.swift in Sources */,
 				BF7416842818159200B70CD8 /* SearchRepositoryResponse.swift in Sources */,
-				BFA5514F2816BCE300CF01D2 /* ViewController.swift in Sources */,
+				BFCA9AB4281841B8002E9061 /* RSViewController.swift in Sources */,
+				BFCA9ABC2818447E002E9061 /* RSSearchListViewController.swift in Sources */,
+				BFCA9ABE28184487002E9061 /* RSSearchListViewModel.swift in Sources */,
 				BF0250582817FB5600F3683F /* RSNetworkMockup.swift in Sources */,
+				BFCA9AB628184225002E9061 /* RSNavigationController.swift in Sources */,
+				BFCA9AB2281841AA002E9061 /* RSSearchContainerViewController.swift in Sources */,
+				BFCA9AB82818427A002E9061 /* RSViewModel.swift in Sources */,
+				BFCA9ABA281843A0002E9061 /* RSSearchContainerViewModel.swift in Sources */,
 				BF74168E2818210000B70CD8 /* RSAPIMockup.swift in Sources */,
 				BF3BEBFA2817E4E9008B8546 /* RSNetwork.swift in Sources */,
 				BFA5514B2816BCE300CF01D2 /* AppDelegate.swift in Sources */,
 				BF7416862818172600B70CD8 /* RSAPI.swift in Sources */,
+				BFCA9AAD281840C4002E9061 /* RSSearchNavigationController.swift in Sources */,
 				BF4DA3A62816E8F400462BAD /* R.generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -484,10 +524,10 @@
 				DEVELOPMENT_TEAM = Q734ES4968;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = reposearch/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "$(RS_DISPLAY_NAME)";
+				INFOPLIST_KEY_CFBundleDisplayName = RS_Debug;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = Search;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -599,10 +639,10 @@
 				DEVELOPMENT_TEAM = Q734ES4968;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = reposearch/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "$(RS_DISPLAY_NAME)";
+				INFOPLIST_KEY_CFBundleDisplayName = RS_Debug;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = Search;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -709,10 +749,10 @@
 				DEVELOPMENT_TEAM = Q734ES4968;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = reposearch/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "$(RS_DISPLAY_NAME)";
+				INFOPLIST_KEY_CFBundleDisplayName = RS_Debug;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = Search;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -881,10 +921,10 @@
 				DEVELOPMENT_TEAM = Q734ES4968;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = reposearch/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "$(RS_DISPLAY_NAME)";
+				INFOPLIST_KEY_CFBundleDisplayName = RS_Debug;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = Search;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -914,10 +954,10 @@
 				DEVELOPMENT_TEAM = Q734ES4968;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = reposearch/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "$(RS_DISPLAY_NAME)";
+				INFOPLIST_KEY_CFBundleDisplayName = RS_Debug;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = Search;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
