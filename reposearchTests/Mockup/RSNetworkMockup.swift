@@ -22,6 +22,6 @@ extension RSNetworkMockup: RSNetworkInterface {
             }
         }
         
-        return .error(RSHTTPError.init(statusCode: 500))
+        return .error(RSError.http(500))
     }
 }

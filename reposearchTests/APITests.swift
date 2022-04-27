@@ -24,7 +24,7 @@ class APITests: XCTestCase {
     func testAPIs() throws {
         let apiVoids: [Single<Void>] = [
             RSAPIFactory.instance.searchRepositories(text: "")
-                .map { _ in () }
+                .mapToVoid()
         ]
         
         let tuples = apiVoids.map { single -> (Disposable, XCTestExpectation) in

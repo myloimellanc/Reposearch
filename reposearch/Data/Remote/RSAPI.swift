@@ -9,14 +9,6 @@ import Foundation
 import RxSwift
 
 
-extension PrimitiveSequence where Trait == SingleTrait, Element == Data {
-    func decode<T: Codable>() -> Single<T> {
-        return self
-            .map { try JSONDecoder().decode(T.self, from: $0) }
-    }
-}
-
-
 enum RSAPIURL: String, CaseIterable {
     
     case searchReposiroties = "/search/repositories"

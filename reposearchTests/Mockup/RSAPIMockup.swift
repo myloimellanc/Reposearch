@@ -18,8 +18,7 @@ extension RSAPIMockup: RSAPIInterface {
     func searchRepositories(text: String) -> Single<SearchRepositoriesResponse> {
         let apiUrl = RSAPIURL.searchReposiroties
         guard let data = apiUrl.responseMockup(method: apiUrl.method) else {
-            fatalError()
-//            return .error() // TODO: Basic error object needed
+            return .error(RSError.default("\(#function)")) 
         }
         
         return Single.just(data)

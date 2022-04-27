@@ -18,33 +18,6 @@ typealias RSHTTPMethod = HTTPMethod
 typealias RSURLConvertible = URLConvertible
 
 
-fileprivate let RSNetworkScheduler = ConcurrentDispatchQueueScheduler(queue: DispatchQueue(label: "reposearch_network", attributes: .concurrent))
-
-
-struct RSHTTPError: LocalizedError {
-    let statusCode: Int
-    
-    var errorDescription: String? {
-        return "HTTP Error occurred: \(self.statusCode)"
-    }
-}
-
-
-extension Observable where Element == (HTTPURLResponse, Data) {
-    func checkHttpError() -> Observable<Data> {
-        return self.map { response, data -> Data in
-            switch response.statusCode {
-            case 200 ... 299:
-                return data
-                
-            default:
-                throw RSHTTPError(statusCode: response.statusCode)
-            }
-        }
-    }
-}
-
-
 protocol RSNetworkInterface: AnyObject {
     func urlRequest(_ url: RSURLConvertible,
                     _ method: RSHTTPMethod,
@@ -100,7 +73,7 @@ extension RSNetwork: RSNetworkInterface {
                                        parameters: parameters,
                                        encoding: encoding,
                                        headers: httpHeaders)
-            .subscribe(on: RSNetworkScheduler)
+            .subscribe(on: ConcurrentDispatchQueueScheduler.RSNetwork)
             .responseData()
             .checkHttpError()
             .take(1)

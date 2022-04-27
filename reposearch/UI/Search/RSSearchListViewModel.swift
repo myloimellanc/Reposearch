@@ -28,7 +28,7 @@ class RSSearchListViewModel: RSViewModel {
                 return RSAPIFactory.instance.searchRepositories(text: text)
                     .asObservable()
                     .map { $0.items }
-//                    .catchAndReturn([])
+                    .catchErrorJustComplete()
             }
             .bind(to: self.repositories)
             .disposed(by: self.disposeBag)
