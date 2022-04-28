@@ -5,6 +5,8 @@
 //  Created by mellancmyloi on 2022/04/28.
 //
 
+#if TEST
+
 import Foundation
 import RxSwift
 
@@ -26,3 +28,5 @@ extension RSRepoRepositoryMockup: RSRepoRepositoryInterface {
         return .just(searchResult)
     }
 }
+
+#endif

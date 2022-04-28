@@ -5,6 +5,8 @@
 //  Created by mellancmyloi on 2022/04/28.
 //
 
+#if TEST
+
 import Foundation
 import RxSwift
 
@@ -22,3 +24,5 @@ extension RSRepoSearchUseCaseMockup: RSRepoSearchUseCaseInterface {
         return .just(([RSRepo(owner: "", name: "", description: "", starCount: 0)], false))
     }
 }
+
+#endif
