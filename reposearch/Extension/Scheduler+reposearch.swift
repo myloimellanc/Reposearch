@@ -9,6 +9,13 @@ import Foundation
 import RxSwift
 
 
+extension DispatchQueue {
+    static let RSNetwork = DispatchQueue(label: "reposearch_network", attributes: .concurrent)
+    static let RSImageDownloader = DispatchQueue(label: "reposearch_image_downloader", attributes: .concurrent)
+}
+
+
 extension ConcurrentDispatchQueueScheduler {
-    static let RSNetwork = ConcurrentDispatchQueueScheduler(queue: DispatchQueue(label: "reposearch_network", attributes: .concurrent))
+    static let RSNetwork = ConcurrentDispatchQueueScheduler(queue: .RSNetwork)
+    static let RSImageDownloader = ConcurrentDispatchQueueScheduler(queue: .RSImageDownloader)
 }
