@@ -17,6 +17,16 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="XWP-cG-Zxp">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="UBz-8m-1vo" kind="relationship" relationship="rootViewController" id="3nY-go-mOz"/>
@@ -34,7 +44,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="n4Y-4M-Qb5"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <navigationItem key="navigationItem" id="WYq-ZB-uOC"/>
                 </viewController>
@@ -52,7 +62,8 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="4ec-mZ-LKa">
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="separatorColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="RSSearchTableViewCellDefault" rowHeight="159" id="y4M-LH-3fl" customClass="RSSearchTableViewCellDefault" customModule="reposearch" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="159"/>
@@ -98,7 +109,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="bottom" secondItem="QZK-6h-QBO" secondAttribute="bottom" id="DFm-hf-JPo"/>
                                                         <constraint firstItem="ama-Sy-gQw" firstAttribute="centerY" secondItem="QZK-6h-QBO" secondAttribute="centerY" id="EIA-mq-bTg"/>
@@ -117,12 +128,14 @@
                                                     </constraints>
                                                 </view>
                                             </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="Ai6-5O-JPi" firstAttribute="leading" secondItem="gym-d9-u7f" secondAttribute="leading" constant="15" id="0x3-a6-j7l"/>
                                                 <constraint firstAttribute="trailing" secondItem="Ai6-5O-JPi" secondAttribute="trailing" constant="15" id="97R-L6-K79"/>
                                                 <constraint firstItem="Ai6-5O-JPi" firstAttribute="top" secondItem="gym-d9-u7f" secondAttribute="top" constant="15" id="i6n-jM-e3m"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="descriptionLabel" destination="wPn-A0-Zbs" id="J4t-JM-VER"/>
                                             <outlet property="ownerLabel" destination="EfW-gZ-wv2" id="eWw-Xf-OX4"/>
@@ -134,7 +147,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="GNq-ck-4eX"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="4ec-mZ-LKa" firstAttribute="leading" secondItem="GNq-ck-4eX" secondAttribute="leading" id="San-Fe-yiU"/>
                             <constraint firstItem="4ec-mZ-LKa" firstAttribute="top" secondItem="GNq-ck-4eX" secondAttribute="top" id="c3C-Fv-xI0"/>
@@ -144,10 +157,59 @@
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="tableEmptyBackgroundView" destination="wq2-c1-VEP" id="YhN-x9-C54"/>
+                        <outlet property="tableIndicatorBackgroundView" destination="AFM-as-5K8" id="eyB-WH-gDi"/>
                         <outlet property="tableView" destination="4ec-mZ-LKa" id="RNo-yV-yuA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kkE-j5-wr7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="AFM-as-5K8" customClass="RSSearchTableIndicatorBackgroundView" customModule="reposearch" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="MtA-2X-DHV">
+                            <rect key="frame" x="197" y="90" width="20" height="20"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="20" id="Okd-mG-T0V"/>
+                                <constraint firstAttribute="height" constant="20" id="gdC-bX-SB9"/>
+                            </constraints>
+                            <color key="color" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </activityIndicatorView>
+                    </subviews>
+                    <viewLayoutGuide key="safeArea" id="NtW-eq-dGJ"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="MtA-2X-DHV" firstAttribute="centerY" secondItem="AFM-as-5K8" secondAttribute="centerY" id="9QU-IB-4rn"/>
+                        <constraint firstItem="MtA-2X-DHV" firstAttribute="centerX" secondItem="AFM-as-5K8" secondAttribute="centerX" id="p8n-6f-wUx"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="indicatorView" destination="MtA-2X-DHV" id="j6Z-sj-5a8"/>
+                    </connections>
+                </view>
+                <view contentMode="scaleToFill" id="wq2-c1-VEP" customClass="RSSearchTableEmptyBackgroundView" customModule="reposearch" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="검색 결과가 없습니다." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e3g-q6-hYN">
+                            <rect key="frame" x="15" y="89.5" width="384" height="21"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="shadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </label>
+                    </subviews>
+                    <viewLayoutGuide key="safeArea" id="kkT-4l-kgZ"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="e3g-q6-hYN" firstAttribute="centerY" secondItem="wq2-c1-VEP" secondAttribute="centerY" id="5Ih-PS-BAa"/>
+                        <constraint firstItem="kkT-4l-kgZ" firstAttribute="trailing" secondItem="e3g-q6-hYN" secondAttribute="trailing" constant="15" id="vs1-WO-na9"/>
+                        <constraint firstItem="e3g-q6-hYN" firstAttribute="leading" secondItem="kkT-4l-kgZ" secondAttribute="leading" constant="15" id="y2T-Ny-5Ay"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="titleLabel" destination="e3g-q6-hYN" id="GUE-E4-zeW"/>
+                    </connections>
+                </view>
             </objects>
             <point key="canvasLocation" x="1453.6231884057972" y="75.669642857142847"/>
         </scene>
@@ -156,9 +218,6 @@
         <image name="star" catalog="system" width="128" height="116"/>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>

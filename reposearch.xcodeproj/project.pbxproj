@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		14E54C729A49556590117AAB /* libPods-reposearch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F96B30A4814770DAD34EFDAB /* libPods-reposearch.a */; };
 		BF0250582817FB5600F3683F /* RSNetworkMockup.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0250562817FB3500F3683F /* RSNetworkMockup.swift */; };
+		BF09C30B281AEC68006C2359 /* RSSearchTableEmptyBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF09C30A281AEC68006C2359 /* RSSearchTableEmptyBackgroundView.swift */; };
+		BF09C30D281AEC74006C2359 /* RSSearchTableIndicatorBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF09C30C281AEC74006C2359 /* RSSearchTableIndicatorBackgroundView.swift */; };
 		BF112C8B28196FA7003782B3 /* Observable+reposearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF112C8A28196FA7003782B3 /* Observable+reposearch.swift */; };
 		BF112C8D281970E5003782B3 /* RSError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF112C8C281970E5003782B3 /* RSError.swift */; };
 		BF112C9128197424003782B3 /* Scheduler+reposearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF112C9028197424003782B3 /* Scheduler+reposearch.swift */; };
@@ -68,6 +70,8 @@
 		48FD9C7F8AD80A0DCA63D828 /* Pods-reposearch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reposearch.debug.xcconfig"; path = "Target Support Files/Pods-reposearch/Pods-reposearch.debug.xcconfig"; sourceTree = "<group>"; };
 		910262E2E2025E9DB15CED10 /* Pods-reposearch.qa.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reposearch.qa.xcconfig"; path = "Target Support Files/Pods-reposearch/Pods-reposearch.qa.xcconfig"; sourceTree = "<group>"; };
 		BF0250562817FB3500F3683F /* RSNetworkMockup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSNetworkMockup.swift; sourceTree = "<group>"; };
+		BF09C30A281AEC68006C2359 /* RSSearchTableEmptyBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSearchTableEmptyBackgroundView.swift; sourceTree = "<group>"; };
+		BF09C30C281AEC74006C2359 /* RSSearchTableIndicatorBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSearchTableIndicatorBackgroundView.swift; sourceTree = "<group>"; };
 		BF112C8A28196FA7003782B3 /* Observable+reposearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+reposearch.swift"; sourceTree = "<group>"; };
 		BF112C8C281970E5003782B3 /* RSError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSError.swift; sourceTree = "<group>"; };
 		BF112C9028197424003782B3 /* Scheduler+reposearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Scheduler+reposearch.swift"; sourceTree = "<group>"; };
@@ -276,6 +280,8 @@
 				BFCA9ABD28184487002E9061 /* RSSearchListViewModel.swift */,
 				BFCA9ABB2818447E002E9061 /* RSSearchListViewController.swift */,
 				BFCA9ABF28184494002E9061 /* RSSearchTableViewCellDefault.swift */,
+				BF09C30C281AEC74006C2359 /* RSSearchTableIndicatorBackgroundView.swift */,
+				BF09C30A281AEC68006C2359 /* RSSearchTableEmptyBackgroundView.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -528,10 +534,12 @@
 				BF1EFC71281AC4E400CE8B73 /* RSRepository.swift in Sources */,
 				BFF330D2281991F8002F0154 /* RSRepoSearch.swift in Sources */,
 				BFCA9ABE28184487002E9061 /* RSSearchListViewModel.swift in Sources */,
+				BF09C30B281AEC68006C2359 /* RSSearchTableEmptyBackgroundView.swift in Sources */,
 				BF4D4344281AD76D00C1DB41 /* RSImageDownloader.swift in Sources */,
 				BF0250582817FB5600F3683F /* RSNetworkMockup.swift in Sources */,
 				BFCA9AB628184225002E9061 /* RSNavigationController.swift in Sources */,
 				BFCA9AB2281841AA002E9061 /* RSSearchContainerViewController.swift in Sources */,
+				BF09C30D281AEC74006C2359 /* RSSearchTableIndicatorBackgroundView.swift in Sources */,
 				BFCA9AB82818427A002E9061 /* RSViewModel.swift in Sources */,
 				BFCA9ABA281843A0002E9061 /* RSSearchContainerViewModel.swift in Sources */,
 				BF1EFC76281AC6E500CE8B73 /* RSRepositoryMockup.swift in Sources */,

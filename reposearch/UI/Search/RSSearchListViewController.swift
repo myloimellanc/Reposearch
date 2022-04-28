@@ -13,6 +13,8 @@ import RxCocoa
 class RSSearchListViewController: RSViewController<RSSearchListViewModel> {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet var tableIndicatorBackgroundView: RSSearchTableIndicatorBackgroundView!
+    @IBOutlet var tableEmptyBackgroundView: RSSearchTableEmptyBackgroundView!
     
     func setSearchText(_ text: String) {
         self.viewModel.setSearchText(text)
