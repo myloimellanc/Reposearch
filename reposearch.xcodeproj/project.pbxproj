@@ -19,6 +19,8 @@
 		BF1EFC79281ACA4300CE8B73 /* RepoRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1EFC78281ACA4300CE8B73 /* RepoRepositoryTests.swift */; };
 		BF3BEBFA2817E4E9008B8546 /* RSNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3BEBF92817E4E9008B8546 /* RSNetwork.swift */; };
 		BF3BEBFE2817EC28008B8546 /* NetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3BEBFD2817EC28008B8546 /* NetworkTests.swift */; };
+		BF4D4344281AD76D00C1DB41 /* RSImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4D4343281AD76D00C1DB41 /* RSImageDownloader.swift */; };
+		BF4D4346281ADAA400C1DB41 /* ImageDownloaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4D4345281ADAA400C1DB41 /* ImageDownloaderTests.swift */; };
 		BF4DA3A62816E8F400462BAD /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4DA3A52816E8F400462BAD /* R.generated.swift */; };
 		BF7416842818159200B70CD8 /* SearchRepositoryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7416832818159200B70CD8 /* SearchRepositoryResponse.swift */; };
 		BF7416862818172600B70CD8 /* RSAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7416852818172600B70CD8 /* RSAPI.swift */; };
@@ -76,6 +78,8 @@
 		BF1EFC78281ACA4300CE8B73 /* RepoRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoRepositoryTests.swift; sourceTree = "<group>"; };
 		BF3BEBF92817E4E9008B8546 /* RSNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSNetwork.swift; sourceTree = "<group>"; };
 		BF3BEBFD2817EC28008B8546 /* NetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTests.swift; sourceTree = "<group>"; };
+		BF4D4343281AD76D00C1DB41 /* RSImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSImageDownloader.swift; sourceTree = "<group>"; };
+		BF4D4345281ADAA400C1DB41 /* ImageDownloaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloaderTests.swift; sourceTree = "<group>"; };
 		BF4DA3A52816E8F400462BAD /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		BF7416832818159200B70CD8 /* SearchRepositoryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepositoryResponse.swift; sourceTree = "<group>"; };
 		BF7416852818172600B70CD8 /* RSAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSAPI.swift; sourceTree = "<group>"; };
@@ -194,6 +198,7 @@
 				BF7416822818156A00B70CD8 /* Response */,
 				BF7416852818172600B70CD8 /* RSAPI.swift */,
 				BF3BEBF92817E4E9008B8546 /* RSNetwork.swift */,
+				BF4D4343281AD76D00C1DB41 /* RSImageDownloader.swift */,
 			);
 			path = Remote;
 			sourceTree = "<group>";
@@ -310,6 +315,7 @@
 				BF0250592817FBC700F3683F /* Mockup */,
 				BF3BEBFD2817EC28008B8546 /* NetworkTests.swift */,
 				BF74168F2818230600B70CD8 /* APITests.swift */,
+				BF4D4345281ADAA400C1DB41 /* ImageDownloaderTests.swift */,
 				BF1EFC78281ACA4300CE8B73 /* RepoRepositoryTests.swift */,
 				BFF330E028199720002F0154 /* RepoSearchUseCaseTests.swift */,
 			);
@@ -522,6 +528,7 @@
 				BF1EFC71281AC4E400CE8B73 /* RSRepository.swift in Sources */,
 				BFF330D2281991F8002F0154 /* RSRepoSearch.swift in Sources */,
 				BFCA9ABE28184487002E9061 /* RSSearchListViewModel.swift in Sources */,
+				BF4D4344281AD76D00C1DB41 /* RSImageDownloader.swift in Sources */,
 				BF0250582817FB5600F3683F /* RSNetworkMockup.swift in Sources */,
 				BFCA9AB628184225002E9061 /* RSNavigationController.swift in Sources */,
 				BFCA9AB2281841AA002E9061 /* RSSearchContainerViewController.swift in Sources */,
@@ -554,6 +561,7 @@
 				BF7416902818230600B70CD8 /* APITests.swift in Sources */,
 				BF1EFC79281ACA4300CE8B73 /* RepoRepositoryTests.swift in Sources */,
 				BF3BEBFE2817EC28008B8546 /* NetworkTests.swift in Sources */,
+				BF4D4346281ADAA400C1DB41 /* ImageDownloaderTests.swift in Sources */,
 				BFF330E128199720002F0154 /* RepoSearchUseCaseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
