@@ -13,6 +13,10 @@
 		BF112C8D281970E5003782B3 /* RSError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF112C8C281970E5003782B3 /* RSError.swift */; };
 		BF112C9128197424003782B3 /* Scheduler+reposearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF112C9028197424003782B3 /* Scheduler+reposearch.swift */; };
 		BF1692AE2816CFF400A06B83 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BF1692B02816CFF400A06B83 /* Localizable.strings */; };
+		BF1EFC71281AC4E400CE8B73 /* RSRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1EFC70281AC4E400CE8B73 /* RSRepository.swift */; };
+		BF1EFC76281AC6E500CE8B73 /* RSRepositoryMockup.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1EFC72281AC6D500CE8B73 /* RSRepositoryMockup.swift */; };
+		BF1EFC77281AC6E700CE8B73 /* RSUseCaseMockup.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1EFC74281AC6E000CE8B73 /* RSUseCaseMockup.swift */; };
+		BF1EFC79281ACA4300CE8B73 /* RepoRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1EFC78281ACA4300CE8B73 /* RepoRepositoryTests.swift */; };
 		BF3BEBFA2817E4E9008B8546 /* RSNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3BEBF92817E4E9008B8546 /* RSNetwork.swift */; };
 		BF3BEBFE2817EC28008B8546 /* NetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3BEBFD2817EC28008B8546 /* NetworkTests.swift */; };
 		BF4DA3A62816E8F400462BAD /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4DA3A52816E8F400462BAD /* R.generated.swift */; };
@@ -20,6 +24,7 @@
 		BF7416862818172600B70CD8 /* RSAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7416852818172600B70CD8 /* RSAPI.swift */; };
 		BF74168E2818210000B70CD8 /* RSAPIMockup.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF74168C281820FB00B70CD8 /* RSAPIMockup.swift */; };
 		BF7416902818230600B70CD8 /* APITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF74168F2818230600B70CD8 /* APITests.swift */; };
+		BF7A1829281AC4710059F34F /* RSRepoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7A1828281AC4710059F34F /* RSRepoRepository.swift */; };
 		BFA5514B2816BCE300CF01D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA5514A2816BCE300CF01D2 /* AppDelegate.swift */; };
 		BFA551542816BCE400CF01D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFA551532816BCE400CF01D2 /* Assets.xcassets */; };
 		BFCA9AAD281840C4002E9061 /* RSSearchNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCA9AAC281840C4002E9061 /* RSSearchNavigationController.swift */; };
@@ -35,7 +40,7 @@
 		BFDBC4FD2816DE0C003B5E21 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFDBC4FB2816DE0C003B5E21 /* LaunchScreen.storyboard */; };
 		BFDDE99128197BCF00F3DA34 /* RSSearchSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDDE99028197BCF00F3DA34 /* RSSearchSort.swift */; };
 		BFDDE99328197C8100F3DA34 /* RSSearchOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDDE99228197C8100F3DA34 /* RSSearchOrder.swift */; };
-		BFF330D2281991F8002F0154 /* RSRepoSearchQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF330D1281991F8002F0154 /* RSRepoSearchQuery.swift */; };
+		BFF330D2281991F8002F0154 /* RSRepoSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF330D1281991F8002F0154 /* RSRepoSearch.swift */; };
 		BFF330D428199204002F0154 /* RSRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF330D328199204002F0154 /* RSRepo.swift */; };
 		BFF330D728199290002F0154 /* RSRepoSearchUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF330D628199290002F0154 /* RSRepoSearchUseCase.swift */; };
 		BFF330DA281992CC002F0154 /* RSDomainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF330D9281992CC002F0154 /* RSDomainModel.swift */; };
@@ -65,6 +70,10 @@
 		BF112C8C281970E5003782B3 /* RSError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSError.swift; sourceTree = "<group>"; };
 		BF112C9028197424003782B3 /* Scheduler+reposearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Scheduler+reposearch.swift"; sourceTree = "<group>"; };
 		BF1692B12816CFFE00A06B83 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
+		BF1EFC70281AC4E400CE8B73 /* RSRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSRepository.swift; sourceTree = "<group>"; };
+		BF1EFC72281AC6D500CE8B73 /* RSRepositoryMockup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSRepositoryMockup.swift; sourceTree = "<group>"; };
+		BF1EFC74281AC6E000CE8B73 /* RSUseCaseMockup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSUseCaseMockup.swift; sourceTree = "<group>"; };
+		BF1EFC78281ACA4300CE8B73 /* RepoRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoRepositoryTests.swift; sourceTree = "<group>"; };
 		BF3BEBF92817E4E9008B8546 /* RSNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSNetwork.swift; sourceTree = "<group>"; };
 		BF3BEBFD2817EC28008B8546 /* NetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTests.swift; sourceTree = "<group>"; };
 		BF4DA3A52816E8F400462BAD /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
@@ -72,6 +81,7 @@
 		BF7416852818172600B70CD8 /* RSAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSAPI.swift; sourceTree = "<group>"; };
 		BF74168C281820FB00B70CD8 /* RSAPIMockup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSAPIMockup.swift; sourceTree = "<group>"; };
 		BF74168F2818230600B70CD8 /* APITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITests.swift; sourceTree = "<group>"; };
+		BF7A1828281AC4710059F34F /* RSRepoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSRepoRepository.swift; sourceTree = "<group>"; };
 		BFA551472816BCE300CF01D2 /* reposearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = reposearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFA5514A2816BCE300CF01D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFA551532816BCE400CF01D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -97,7 +107,7 @@
 		BFE2D9CC2816C3DE00CCC215 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		BFE2D9CE2816C47300CCC215 /* Test.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Test.xcconfig; sourceTree = "<group>"; };
 		BFE2D9D32816C4D100CCC215 /* reposearchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = reposearchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BFF330D1281991F8002F0154 /* RSRepoSearchQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSRepoSearchQuery.swift; sourceTree = "<group>"; };
+		BFF330D1281991F8002F0154 /* RSRepoSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSRepoSearch.swift; sourceTree = "<group>"; };
 		BFF330D328199204002F0154 /* RSRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSRepo.swift; sourceTree = "<group>"; };
 		BFF330D628199290002F0154 /* RSRepoSearchUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSRepoSearchUseCase.swift; sourceTree = "<group>"; };
 		BFF330D9281992CC002F0154 /* RSDomainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSDomainModel.swift; sourceTree = "<group>"; };
@@ -151,6 +161,8 @@
 			children = (
 				BF0250562817FB3500F3683F /* RSNetworkMockup.swift */,
 				BF74168C281820FB00B70CD8 /* RSAPIMockup.swift */,
+				BF1EFC72281AC6D500CE8B73 /* RSRepositoryMockup.swift */,
+				BF1EFC74281AC6E000CE8B73 /* RSUseCaseMockup.swift */,
 			);
 			path = Mockup;
 			sourceTree = "<group>";
@@ -170,6 +182,7 @@
 				BFDDE98E28197BB000F3DA34 /* Local */,
 				BF3BEBF82817DE3B008B8546 /* Remote */,
 				BF112C8C281970E5003782B3 /* RSError.swift */,
+				BF7A1827281AC4570059F34F /* Repository */,
 				BFF330DD281993DE002F0154 /* Convertible */,
 			);
 			path = Data;
@@ -191,6 +204,15 @@
 				BF7416832818159200B70CD8 /* SearchRepositoryResponse.swift */,
 			);
 			path = Response;
+			sourceTree = "<group>";
+		};
+		BF7A1827281AC4570059F34F /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				BF1EFC70281AC4E400CE8B73 /* RSRepository.swift */,
+				BF7A1828281AC4710059F34F /* RSRepoRepository.swift */,
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 		BFA5513E2816BCE300CF01D2 = {
@@ -288,6 +310,7 @@
 				BF0250592817FBC700F3683F /* Mockup */,
 				BF3BEBFD2817EC28008B8546 /* NetworkTests.swift */,
 				BF74168F2818230600B70CD8 /* APITests.swift */,
+				BF1EFC78281ACA4300CE8B73 /* RepoRepositoryTests.swift */,
 				BFF330E028199720002F0154 /* RepoSearchUseCaseTests.swift */,
 			);
 			path = reposearchTests;
@@ -319,7 +342,7 @@
 			children = (
 				BFF330D9281992CC002F0154 /* RSDomainModel.swift */,
 				BFF330D328199204002F0154 /* RSRepo.swift */,
-				BFF330D1281991F8002F0154 /* RSRepoSearchQuery.swift */,
+				BFF330D1281991F8002F0154 /* RSRepoSearch.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -495,13 +518,16 @@
 				BF112C8B28196FA7003782B3 /* Observable+reposearch.swift in Sources */,
 				BFCA9AB4281841B8002E9061 /* RSViewController.swift in Sources */,
 				BFCA9ABC2818447E002E9061 /* RSSearchListViewController.swift in Sources */,
-				BFF330D2281991F8002F0154 /* RSRepoSearchQuery.swift in Sources */,
+				BF1EFC77281AC6E700CE8B73 /* RSUseCaseMockup.swift in Sources */,
+				BF1EFC71281AC4E400CE8B73 /* RSRepository.swift in Sources */,
+				BFF330D2281991F8002F0154 /* RSRepoSearch.swift in Sources */,
 				BFCA9ABE28184487002E9061 /* RSSearchListViewModel.swift in Sources */,
 				BF0250582817FB5600F3683F /* RSNetworkMockup.swift in Sources */,
 				BFCA9AB628184225002E9061 /* RSNavigationController.swift in Sources */,
 				BFCA9AB2281841AA002E9061 /* RSSearchContainerViewController.swift in Sources */,
 				BFCA9AB82818427A002E9061 /* RSViewModel.swift in Sources */,
 				BFCA9ABA281843A0002E9061 /* RSSearchContainerViewModel.swift in Sources */,
+				BF1EFC76281AC6E500CE8B73 /* RSRepositoryMockup.swift in Sources */,
 				BFF330D728199290002F0154 /* RSRepoSearchUseCase.swift in Sources */,
 				BF112C9128197424003782B3 /* Scheduler+reposearch.swift in Sources */,
 				BF74168E2818210000B70CD8 /* RSAPIMockup.swift in Sources */,
@@ -510,6 +536,7 @@
 				BF7416862818172600B70CD8 /* RSAPI.swift in Sources */,
 				BFDDE99128197BCF00F3DA34 /* RSSearchSort.swift in Sources */,
 				BFF330DA281992CC002F0154 /* RSDomainModel.swift in Sources */,
+				BF7A1829281AC4710059F34F /* RSRepoRepository.swift in Sources */,
 				BFDDE99328197C8100F3DA34 /* RSSearchOrder.swift in Sources */,
 				BFF330D428199204002F0154 /* RSRepo.swift in Sources */,
 				BFF330DF2819940B002F0154 /* RSDomainConvertible.swift in Sources */,
@@ -525,6 +552,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF7416902818230600B70CD8 /* APITests.swift in Sources */,
+				BF1EFC79281ACA4300CE8B73 /* RepoRepositoryTests.swift in Sources */,
 				BF3BEBFE2817EC28008B8546 /* NetworkTests.swift in Sources */,
 				BFF330E128199720002F0154 /* RepoSearchUseCaseTests.swift in Sources */,
 			);

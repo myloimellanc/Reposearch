@@ -1,5 +1,5 @@
 //
-//  RepoSearchUseCaseTests.swift
+//  RepoRepositoryTests.swift
 //  reposearchTests
 //
 //  Created by mellancmyloi on 2022/04/28.
@@ -10,8 +10,8 @@ import RxSwift
 @testable import reposearch
 
 
-class RepoSearchUseCaseTests: XCTestCase {
-
+class RepoRepositoryTests: XCTestCase {
+    
     override func setUpWithError() throws {
         
     }
@@ -20,7 +20,7 @@ class RepoSearchUseCaseTests: XCTestCase {
          
     }
 
-    func testRepoSearch() throws {
+    func testRepoSearchResult() throws {
         let searchQuery = RSRepoSearchQuery(query: "test",
                                             sort: .bestMatch,
                                             order: .desc,
@@ -28,10 +28,10 @@ class RepoSearchUseCaseTests: XCTestCase {
                                             page: 1)
         
         let expectation = XCTestExpectation()
-        let disposable = RSRepoSearchUseCase().searchRepos(searchQuery: searchQuery)
-            .subscribe(onSuccess: { repos, isCompleted in
+        let disposable = RSRepoRepository().getRepoSearchResult(searchQuery: searchQuery)
+            .subscribe(onSuccess: { searchResult in
                 expectation.fulfill()
-                
+                print(123123, searchResult)
             }, onFailure: { error in
                 XCTFail(error.localizedDescription)
             })

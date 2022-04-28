@@ -30,7 +30,7 @@ class RSSearchListViewModel: RSViewModel {
                                                     order: .desc,
                                                     perPage: 30,
                                                     page: 1)
-                return RSRepoSearchUseCase().searchRepos(searchQuery: searchQuery)
+                return RSRepoSearchUseCaseFactory.instance.searchRepos(searchQuery: searchQuery)
                     .asObservable()
                     .map { $0.repos }
                     .catchErrorJustComplete()
