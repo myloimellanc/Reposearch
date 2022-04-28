@@ -12,7 +12,7 @@ import RxRelay
 
 class RSSearchListViewModel: RSViewModel {
     
-    let repositories = BehaviorRelay<[SearchRepositoryResponse]>(value: [])
+    let repositories = BehaviorRelay<[RSRepo]>(value: [])
     private let searchTextUpdateEvent = PublishRelay<String>()
     
     required init() {
@@ -24,14 +24,15 @@ class RSSearchListViewModel: RSViewModel {
             .do(onNext: { vm, _ in vm.repositories.accept([]) })
             .debounce(.seconds(1), scheduler: MainScheduler.asyncInstance)
             .filter { _, text in text.isEmpty != true }
-            .flatMapLatest { _, text -> Observable<[SearchRepositoryResponse]> in
-                return RSAPIFactory.instance.searchRepositories(query: text,
-                                                                sort: .bestMatch,
-                                                                order: .desc,
-                                                                perPage: 30,
-                                                                page: 1)
+            .flatMapLatest { _, text -> Observable<[RSRepo]> in
+                let searchQuery = RSRepoSearchQuery(query: text,
+                                                    sort: .bestMatch,
+                                                    order: .desc,
+                                                    perPage: 30,
+                                                    page: 1)
+                return RSRepoSearchUseCaseFactory.instance.searchRepos(searchQuery: searchQuery)
                     .asObservable()
-                    .map { $0.items }
+                    .map { $0.repos }
                     .catchErrorJustComplete()
             }
             .bind(to: self.repositories)

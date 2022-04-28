@@ -5,6 +5,8 @@
 //  Created by mellancmyloi on 2022/04/26.
 //
 
+#if TEST
+
 import Foundation
 import RxSwift
 
@@ -157,3 +159,5 @@ extension RSAPIURL {
         return json.data(using: .utf8)
     }
 }
+
+#endif
