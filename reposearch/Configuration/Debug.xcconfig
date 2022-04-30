@@ -1,0 +1,13 @@
+//
+//  Debug.xcconfig
+//  reposearch
+//
+//  Created by mellancmyloi on 2022/04/25.
+//
+
+
+#include "Pods/Target Support Files/Pods-reposearch/Pods-reposearch.debug.xcconfig"
+
+
+RS_DISPLAY_NAME = RS_Debug
+RS_BUNDLE_IDENTIFIER = com.mellanc.reposearch-debug

@@ -1,0 +1,13 @@
+//
+//  QA.xcconfig
+//  reposearch
+//
+//  Created by mellancmyloi on 2022/04/25.
+//
+
+
+#include "Pods/Target Support Files/Pods-reposearch/Pods-reposearch.qa.xcconfig"
+
+
+RS_DISPLAY_NAME = RS_QA
+RS_BUNDLE_IDENTIFIER = com.mellanc.reposearch-qa
