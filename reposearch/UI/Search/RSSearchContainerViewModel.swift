@@ -12,6 +12,9 @@ import RxRelay
 
 class RSSearchContainerViewModel: RSViewModel {
     
+    let searchSorts = RSSearchSort.allCases
+    let perPages: [Int64] = [15, 30, 50]
+    
     required init() {
         super.init()
     }

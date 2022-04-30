@@ -12,6 +12,8 @@ enum RSError: LocalizedError {
     case `default`(String)
     case http(Int)
     
+    case incorrectParam
+    
     var errorDescription: String? {
         switch self {
         case .default(let message):
@@ -19,6 +21,9 @@ enum RSError: LocalizedError {
             
         case .http(let statusCode):
             return "HTTP Error occurred: \(statusCode)"
+            
+        case .incorrectParam:
+            return nil
         }
     }
 }

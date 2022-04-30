@@ -8,7 +8,7 @@
 import Foundation
 
 
-enum RSSearchSort {
+enum RSSearchSort: CaseIterable {
     case bestMatch
     case stars
     case forks

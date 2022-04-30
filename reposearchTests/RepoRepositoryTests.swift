@@ -21,17 +21,17 @@ class RepoRepositoryTests: XCTestCase {
     }
 
     func testRepoSearchResult() throws {
-        let searchQuery = RSRepoSearchQuery(query: "test",
-                                            sort: .bestMatch,
-                                            order: .desc,
-                                            perPage: 30,
-                                            page: 1)
+        let searchQuery = try RSRepoSearchQuery(query: "test",
+                                                sort: .bestMatch,
+                                                order: .desc,
+                                                perPage: 30,
+                                                page: 1)
         
         let expectation = XCTestExpectation()
         let disposable = RSRepoRepository().getRepoSearchResult(searchQuery: searchQuery)
             .subscribe(onSuccess: { searchResult in
                 expectation.fulfill()
-                print(123123, searchResult)
+                
             }, onFailure: { error in
                 XCTFail(error.localizedDescription)
             })

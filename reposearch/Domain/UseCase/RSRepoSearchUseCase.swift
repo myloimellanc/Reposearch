@@ -10,7 +10,7 @@ import RxSwift
 
 
 protocol RSRepoSearchUseCaseInterface: AnyObject {
-    func searchRepos(searchQuery: RSRepoSearchQuery) -> Single<(repos: [RSRepo], isIncompleted: Bool)>
+    func searchRepos(searchQuery: RSRepoSearchQuery) -> Single<(repos: [RSRepo], totalCount: Int64, nextPageExists: Bool)>
 }
 
 
@@ -43,8 +43,17 @@ final class RSRepoSearchUseCase: RSUseCase {
 
 
 extension RSRepoSearchUseCase: RSRepoSearchUseCaseInterface {
-    func searchRepos(searchQuery: RSRepoSearchQuery) -> Single<(repos: [RSRepo], isIncompleted: Bool)> {
+    func searchRepos(searchQuery: RSRepoSearchQuery) -> Single<(repos: [RSRepo], totalCount: Int64, nextPageExists: Bool)> {
         return RSRepoRepositoryFactory.instance.getRepoSearchResult(searchQuery: searchQuery)
-            .map { ($0.repos, $0.isIncompleted) }
+            .map { searchResult in
+                let (quotient, remainder) = searchResult.totalCount.quotientAndRemainder(dividingBy: searchQuery.perPage)
+                let lastPage = (quotient > 0)
+                    ? (remainder > 0)
+                        ? quotient + 1
+                        : quotient
+                    : 1
+                
+                return (searchResult.repos, searchResult.totalCount, searchQuery.page < lastPage)
+            }
     }
 }
