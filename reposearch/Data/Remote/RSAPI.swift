@@ -54,13 +54,29 @@ struct RSAPIFactory {
 }
 
 
-struct RSAPI: RSAPIInterface {
+struct RSAPI {
+    
+    private let accessToken: String
+    
+    init() {
+        guard let infoDict = Bundle.main.infoDictionary,
+              let token = infoDict["GithubAccessToken"] as? String else {
+            fatalError("Cannot find access token.")
+        }
+        
+        self.accessToken = token
+    }
+}
+
+
+extension RSAPI: RSAPIInterface {
     func searchRepositories(query: String,
                             sort: RSSearchSort,
                             order: RSSearchOrder,
                             perPage: Int64,
                             page: Int64) -> Single<SearchRepositoriesResponse> {
         let headers: Dictionary<String, String> = [
+            "Authorization": "Basic " + "\(self.accessToken)",
             "accept": "application/vnd.github.v3+json"
         ]
         
