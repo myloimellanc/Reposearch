@@ -21,15 +21,15 @@ class RepoSearchUseCaseTests: XCTestCase {
     }
 
     func testRepoSearch() throws {
-        let searchQuery = RSRepoSearchQuery(query: "test",
-                                            sort: .bestMatch,
-                                            order: .desc,
-                                            perPage: 30,
-                                            page: 1)
+        let searchQuery = try RSRepoSearchQuery(query: "test",
+                                                sort: .bestMatch,
+                                                order: .desc,
+                                                perPage: 30,
+                                                page: 1)
         
         let expectation = XCTestExpectation()
         let disposable = RSRepoSearchUseCase().searchRepos(searchQuery: searchQuery)
-            .subscribe(onSuccess: { repos, isCompleted in
+            .subscribe(onSuccess: { repos, totalCount, nextPageExists in
                 expectation.fulfill()
                 
             }, onFailure: { error in

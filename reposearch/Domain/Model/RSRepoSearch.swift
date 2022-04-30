@@ -10,14 +10,29 @@ import Foundation
 
 struct RSRepoSearchQuery: RSDomainModel {
     
-    // TODO: Empty string is not allowed
-    var query: String
+    let query: String
     
-    var sort: RSSearchSort
-    var order: RSSearchOrder
+    let sort: RSSearchSort
+    let order: RSSearchOrder
     
-    var perPage: Int64
-    var page: Int64
+    let perPage: Int64
+    let page: Int64
+    
+    init(query: String,
+         sort: RSSearchSort,
+         order: RSSearchOrder,
+         perPage: Int64,
+         page: Int64) throws {
+        guard (query.isEmpty != true) && (perPage > 0) && (page > 0) else {
+            throw RSError.incorrectParam
+        }
+        
+        self.query = query
+        self.sort = sort
+        self.order = order
+        self.perPage = perPage
+        self.page = page
+    }
 }
 
 

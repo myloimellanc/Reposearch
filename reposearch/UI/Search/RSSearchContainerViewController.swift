@@ -10,7 +10,28 @@ import RxSwift
 import RxCocoa
 
 
+fileprivate extension RSSearchSort {
+    var titleValue: String {
+        switch self {
+        case .bestMatch:
+            return "Best"
+        case .stars:
+            return "Stars"
+        case .forks:
+            return "Forks"
+        case .helpWantedIssues:
+            return "Issues"
+        case .updated:
+            return "Updated"
+        }
+    }
+}
+
+
 class RSSearchContainerViewController: RSViewController<RSSearchContainerViewModel> {
+    
+    @IBOutlet weak var perPageLabel: UILabel!
+    @IBOutlet weak var perPageSegmentedControl: UISegmentedControl!
     
     private lazy var searchListViewController: RSSearchListViewController = {
         let vc = R.storyboard.search.rsSearchListViewController()!
@@ -25,6 +46,24 @@ class RSSearchContainerViewController: RSViewController<RSSearchContainerViewMod
             searchVC.automaticallyShowsSearchResultsController = true
             searchVC.showsSearchResultsController = true
         }
+        
+        searchVC.searchBar.scopeButtonTitles = self.viewModel.searchSorts.map { $0.titleValue }
+        searchVC.searchBar.rx.selectedScopeButtonIndex
+            .asObservable()
+            .startWith(0)
+            .withUnretained(self)
+            .subscribe(onNext: { vc, index in
+                let sort = vc.viewModel.searchSorts[index]
+                vc.searchListViewController.setSearchSort(sort)
+            })
+            .disposed(by: self.disposeBag)
+        
+        searchVC.rx.willDismiss
+            .withUnretained(self)
+            .subscribe(onNext: { vc, _ in
+                vc.searchListViewController.setSearchText("")
+            })
+            .disposed(by: self.disposeBag)
         
         return searchVC
     }()
@@ -46,6 +85,20 @@ class RSSearchContainerViewController: RSViewController<RSSearchContainerViewMod
             .withUnretained(self)
             .subscribe(onNext: { vc, text in
                 vc.searchListViewController.setSearchText(text)
+            })
+            .disposed(by: self.disposeBag)
+        
+        self.viewModel.perPages
+            .enumerated()
+            .forEach { self.perPageSegmentedControl.setTitle($1.description, forSegmentAt: $0) }
+        
+        self.perPageSegmentedControl.rx.selectedSegmentIndex
+            .asObservable()
+            .startWith(0)
+            .withUnretained(self)
+            .subscribe(onNext: { vc, index in
+                let perPage = vc.viewModel.perPages[index]
+                vc.searchListViewController.setPerPage(perPage)
             })
             .disposed(by: self.disposeBag)
     }
