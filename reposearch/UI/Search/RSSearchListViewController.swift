@@ -132,6 +132,14 @@ class RSSearchListViewController: RSViewController<RSSearchListViewModel> {
             .observe(on: MainScheduler.instance)
             .bind(to: self.orderButton.rx.isHidden)
             .disposed(by: self.disposeBag)
+        
+        self.viewModel.errorOccurred
+            .asObservable()
+            .observe(on: MainScheduler.asyncInstance)
+            .subscribe(onNext: { error in
+                UIApplication.shared.keyWindow?.addToast(error.localizedDescription)
+            })
+            .disposed(by: self.disposeBag)
     }
 }
 
