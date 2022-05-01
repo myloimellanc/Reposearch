@@ -22,6 +22,7 @@ fileprivate extension RSSearchSort {
         case .helpWantedIssues:
             return "Issues"
         case .updated:
+            // TODO: iPhone SE 1세대에서만 말줄임 처리됨
             return "Updated"
         }
     }
@@ -35,12 +36,27 @@ class RSSearchContainerViewController: RSViewController<RSSearchContainerViewMod
     
     private lazy var searchListViewController: RSSearchListViewController = {
         let vc = R.storyboard.search.rsSearchListViewController()!
+        vc.delegate = self
+        
         return vc
     }()
     
     private lazy var searchController: UISearchController = {
         let searchVC = UISearchController(searchResultsController: searchListViewController)
-        searchVC.searchBar.placeholder = "Search Repositories"
+        searchVC.searchBar.tintColor = R.color.accentColor()
+        
+        if #available(iOS 13.0, *) {
+            searchVC.searchBar.searchTextField.defaultTextAttributes = .Body1
+            searchVC.searchBar.searchTextField.typingAttributes = .Body1
+            searchVC.searchBar.searchTextField.attributedPlaceholder = .Body1(R.string.localizable.searchSearchBarPlaceholder(),
+                                                                              with: [.foregroundColor: R.color.textLightGrey() as Any])
+            
+        } else {
+            searchVC.searchBar.placeholder = R.string.localizable.searchSearchBarPlaceholder()
+        }
+        
+        searchVC.searchBar.setValue(R.string.localizable.searchCancelButtonTitle(), forKey: "cancelButtonText")
+        
         searchVC.hidesNavigationBarDuringPresentation = true
         if #available(iOS 13.0, *) {
             searchVC.automaticallyShowsSearchResultsController = true
@@ -71,9 +87,17 @@ class RSSearchContainerViewController: RSViewController<RSSearchContainerViewMod
     override func initView() {
         super.initView()
         
-        self.navigationItem.title = "Reposearch"
+        self.navigationItem.title = R.string.localizable.title()
         self.navigationItem.largeTitleDisplayMode = .always
         self.navigationItem.searchController = self.searchController
+        
+        self.perPageLabel.attributedText = .Body1(R.string.localizable.searchPerPageTitle())
+        self.perPageSegmentedControl.setTitleTextAttributes(.Body2, for: .normal)
+        self.perPageSegmentedControl.setTitleTextAttributes(.Body2, for: .selected)
+        
+        self.viewModel.perPages
+            .enumerated()
+            .forEach { self.perPageSegmentedControl.setTitle($1.description, forSegmentAt: $0) }
     }
     
     override func viewDidLoad() {
@@ -88,10 +112,6 @@ class RSSearchContainerViewController: RSViewController<RSSearchContainerViewMod
             })
             .disposed(by: self.disposeBag)
         
-        self.viewModel.perPages
-            .enumerated()
-            .forEach { self.perPageSegmentedControl.setTitle($1.description, forSegmentAt: $0) }
-        
         self.perPageSegmentedControl.rx.selectedSegmentIndex
             .asObservable()
             .startWith(0)
@@ -101,5 +121,14 @@ class RSSearchContainerViewController: RSViewController<RSSearchContainerViewMod
                 vc.searchListViewController.setPerPage(perPage)
             })
             .disposed(by: self.disposeBag)
+    }
+}
+
+
+extension RSSearchContainerViewController: RSSearchListViewControllerDelegate {
+    func listDidScroll(from viewController: RSSearchListViewController, tableView: UITableView) {
+        if self.searchController.searchBar.isFirstResponder {
+            self.searchController.searchBar.resignFirstResponder()
+        }
     }
 }

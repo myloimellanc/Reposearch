@@ -11,6 +11,8 @@
 		BF0250582817FB5600F3683F /* RSNetworkMockup.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0250562817FB3500F3683F /* RSNetworkMockup.swift */; };
 		BF09C30B281AEC68006C2359 /* RSSearchTableEmptyBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF09C30A281AEC68006C2359 /* RSSearchTableEmptyBackgroundView.swift */; };
 		BF09C30D281AEC74006C2359 /* RSSearchTableIndicatorBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF09C30C281AEC74006C2359 /* RSSearchTableIndicatorBackgroundView.swift */; };
+		BF0E4C26281E7B1400A571C9 /* AttributedString+reposearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0E4C25281E7B1400A571C9 /* AttributedString+reposearch.swift */; };
+		BF0E4C28281E7B6200A571C9 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF0E4C27281E7B6200A571C9 /* Color.xcassets */; };
 		BF112C8B28196FA7003782B3 /* Observable+reposearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF112C8A28196FA7003782B3 /* Observable+reposearch.swift */; };
 		BF112C8D281970E5003782B3 /* RSError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF112C8C281970E5003782B3 /* RSError.swift */; };
 		BF112C9128197424003782B3 /* Scheduler+reposearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF112C9028197424003782B3 /* Scheduler+reposearch.swift */; };
@@ -75,6 +77,8 @@
 		BF0250562817FB3500F3683F /* RSNetworkMockup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSNetworkMockup.swift; sourceTree = "<group>"; };
 		BF09C30A281AEC68006C2359 /* RSSearchTableEmptyBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSearchTableEmptyBackgroundView.swift; sourceTree = "<group>"; };
 		BF09C30C281AEC74006C2359 /* RSSearchTableIndicatorBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSearchTableIndicatorBackgroundView.swift; sourceTree = "<group>"; };
+		BF0E4C25281E7B1400A571C9 /* AttributedString+reposearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AttributedString+reposearch.swift"; sourceTree = "<group>"; };
+		BF0E4C27281E7B6200A571C9 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		BF112C8A28196FA7003782B3 /* Observable+reposearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+reposearch.swift"; sourceTree = "<group>"; };
 		BF112C8C281970E5003782B3 /* RSError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSError.swift; sourceTree = "<group>"; };
 		BF112C9028197424003782B3 /* Scheduler+reposearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Scheduler+reposearch.swift"; sourceTree = "<group>"; };
@@ -186,6 +190,7 @@
 			children = (
 				BF112C8A28196FA7003782B3 /* Observable+reposearch.swift */,
 				BF112C9028197424003782B3 /* Scheduler+reposearch.swift */,
+				BF0E4C25281E7B1400A571C9 /* AttributedString+reposearch.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -272,6 +277,7 @@
 				BF4DA3A52816E8F400462BAD /* R.generated.swift */,
 				BF1692B02816CFF400A06B83 /* Localizable.strings */,
 				BFA551532816BCE400CF01D2 /* Assets.xcassets */,
+				BF0E4C27281E7B6200A571C9 /* Color.xcassets */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -471,6 +477,7 @@
 			files = (
 				BF1692AE2816CFF400A06B83 /* Localizable.strings in Resources */,
 				BFDBC4FD2816DE0C003B5E21 /* LaunchScreen.storyboard in Resources */,
+				BF0E4C28281E7B6200A571C9 /* Color.xcassets in Resources */,
 				BFA551542816BCE400CF01D2 /* Assets.xcassets in Resources */,
 				BFCA9AB028184135002E9061 /* Search.storyboard in Resources */,
 			);
@@ -540,6 +547,7 @@
 				BFCA9AB4281841B8002E9061 /* RSViewController.swift in Sources */,
 				BFCA9ABC2818447E002E9061 /* RSSearchListViewController.swift in Sources */,
 				BF1EFC77281AC6E700CE8B73 /* RSUseCaseMockup.swift in Sources */,
+				BF0E4C26281E7B1400A571C9 /* AttributedString+reposearch.swift in Sources */,
 				BF1EFC71281AC4E400CE8B73 /* RSRepository.swift in Sources */,
 				BFF330D2281991F8002F0154 /* RSRepoSearch.swift in Sources */,
 				BFCA9ABE28184487002E9061 /* RSSearchListViewModel.swift in Sources */,
@@ -682,13 +690,13 @@
 				DEVELOPMENT_TEAM = Q734ES4968;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = reposearch/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = RS_Debug;
+				INFOPLIST_KEY_CFBundleDisplayName = "$(RS_DISPLAY_NAME)";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Search;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -797,13 +805,13 @@
 				DEVELOPMENT_TEAM = Q734ES4968;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = reposearch/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = RS_Debug;
+				INFOPLIST_KEY_CFBundleDisplayName = "$(RS_DISPLAY_NAME)";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Search;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -907,13 +915,13 @@
 				DEVELOPMENT_TEAM = Q734ES4968;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = reposearch/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = RS_Debug;
+				INFOPLIST_KEY_CFBundleDisplayName = "$(RS_DISPLAY_NAME)";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Search;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1079,13 +1087,13 @@
 				DEVELOPMENT_TEAM = Q734ES4968;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = reposearch/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = RS_Debug;
+				INFOPLIST_KEY_CFBundleDisplayName = "$(RS_DISPLAY_NAME)";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Search;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1112,13 +1120,13 @@
 				DEVELOPMENT_TEAM = Q734ES4968;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = reposearch/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = RS_Debug;
+				INFOPLIST_KEY_CFBundleDisplayName = "$(RS_DISPLAY_NAME)";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Search;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

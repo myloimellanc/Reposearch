@@ -7,7 +7,14 @@
 
 import UIKit
 
+
 class RSSearchTableEmptyBackgroundView: UIView {
     
     @IBOutlet weak var titleLabel: UILabel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        self.titleLabel.attributedText = .Body1(R.string.localizable.searchListEmptyTitle(), with: [.foregroundColor: R.color.textGrey() as Any], into: .center)
+    }
 }

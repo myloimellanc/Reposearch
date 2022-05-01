@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 class RSSearchTableIndicatorBackgroundView: UIView {
     
     @IBOutlet weak var indicatorView: UIActivityIndicatorView!
