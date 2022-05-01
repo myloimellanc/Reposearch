@@ -31,4 +31,8 @@ class RSSearchTableViewCellSectionHeader: UITableViewCell {
     private func resetView() {
         self.titleLabel.text?.removeAll()
     }
+    
+    deinit {
+        print("[DEINIT]", String(describing: type(of: self)))
+    }
 }

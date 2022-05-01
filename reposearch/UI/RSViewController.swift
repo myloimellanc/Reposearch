@@ -19,7 +19,7 @@ class RSViewController<ViewModel: RSViewModel>: UIViewController {
     let disposeBag = DisposeBag()
     
     /**
-     Do not call thie method directly.
+     Override it for initializing UI style. Do not call thie method directly.
      */
     func initView() {
         

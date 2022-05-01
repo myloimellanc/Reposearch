@@ -20,8 +20,15 @@ final class RSRepoSearchUseCaseMockup: RSUseCase {
 
 
 extension RSRepoSearchUseCaseMockup: RSRepoSearchUseCaseInterface {
-    func searchRepos(searchQuery: RSRepoSearchQuery) -> Single<(repos: [RSRepo], totalCount: Int64, nextPageExists: Bool)> {
-        return .just(([RSRepo(owner: "", avatarURL: "", name: "", description: "", starCount: 0)], 0, false))
+    func searchRepos(searchQuery: RSRepoSearchQuery) -> Single<(repos: [RSRepo],
+                                                                totalCount: Int64,
+                                                                nextPageExists: Bool)> {
+        let repo = RSRepo(owner: "",
+                          avatarURL: "",
+                          name: "",
+                          description: "",
+                          starCount: 0)
+        return .just(([repo], 0, false))
     }
 }
 

@@ -61,4 +61,8 @@ class RSSearchTableViewCellDefault: UITableViewCell {
         
         self.disposeBag = DisposeBag()
     }
+    
+    deinit {
+        print("[DEINIT]", String(describing: type(of: self)))
+    }
 }

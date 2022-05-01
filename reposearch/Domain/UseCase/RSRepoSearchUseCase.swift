@@ -10,7 +10,9 @@ import RxSwift
 
 
 protocol RSRepoSearchUseCaseInterface: AnyObject {
-    func searchRepos(searchQuery: RSRepoSearchQuery) -> Single<(repos: [RSRepo], totalCount: Int64, nextPageExists: Bool)>
+    func searchRepos(searchQuery: RSRepoSearchQuery) -> Single<(repos: [RSRepo],
+                                                                totalCount: Int64,
+                                                                nextPageExists: Bool)>
 }
 
 
@@ -43,7 +45,9 @@ final class RSRepoSearchUseCase: RSUseCase {
 
 
 extension RSRepoSearchUseCase: RSRepoSearchUseCaseInterface {
-    func searchRepos(searchQuery: RSRepoSearchQuery) -> Single<(repos: [RSRepo], totalCount: Int64, nextPageExists: Bool)> {
+    func searchRepos(searchQuery: RSRepoSearchQuery) -> Single<(repos: [RSRepo],
+                                                                totalCount: Int64,
+                                                                nextPageExists: Bool)> {
         return RSRepoRepositoryFactory.instance.getRepoSearchResult(searchQuery: searchQuery)
             .observe(on: ConcurrentDispatchQueueScheduler.RSUseCase)
             .map { searchResult in
@@ -57,7 +61,9 @@ extension RSRepoSearchUseCase: RSRepoSearchUseCaseInterface {
                     ? searchQuery.page < lastPage
                     : false
                 
-                return (searchResult.repos, searchResult.totalCount, nextPageExists)
+                return (searchResult.repos,
+                        searchResult.totalCount,
+                        nextPageExists)
             }
             .catch { error in
                 if let rsError = error as? RSError, case .http(let responseCode) = rsError {

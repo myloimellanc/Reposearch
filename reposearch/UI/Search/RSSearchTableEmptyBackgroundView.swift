@@ -17,4 +17,8 @@ class RSSearchTableEmptyBackgroundView: UIView {
         
         self.titleLabel.attributedText = .Body1(R.string.localizable.searchListEmptyTitle(), with: [.foregroundColor: R.color.textGrey() as Any], into: .center)
     }
+    
+    deinit {
+        print("[DEINIT]", String(describing: type(of: self)))
+    }
 }
