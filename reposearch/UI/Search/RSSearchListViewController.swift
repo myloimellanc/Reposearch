@@ -60,11 +60,18 @@ class RSSearchListViewController: RSViewController<RSSearchListViewModel> {
         self.tableView.refreshControl = self.refreshControl
         
         self.orderButton.layer.cornerRadius = 40.0 / 2
+        self.orderButton.setImage(R.image.iconDropdown()?.withRenderingMode(.alwaysTemplate), for: .normal)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.initTableView()
+        self.initOrderButton()
+        self.initErrorToast()
+    }
+    
+    private func initTableView() {
         self.tableView.dataSource = self
         self.tableView.delegate = self
         
@@ -96,7 +103,9 @@ class RSSearchListViewController: RSViewController<RSSearchListViewModel> {
                 vc.refreshControl.endRefreshing()
             })
             .disposed(by: self.disposeBag)
-        
+    }
+    
+    private func initOrderButton() {
         self.viewModel.order
             .asObservable()
             .observe(on: MainScheduler.asyncInstance)
@@ -132,7 +141,9 @@ class RSSearchListViewController: RSViewController<RSSearchListViewModel> {
             .observe(on: MainScheduler.instance)
             .bind(to: self.orderButton.rx.isHidden)
             .disposed(by: self.disposeBag)
-        
+    }
+    
+    private func initErrorToast() {
         self.viewModel.errorOccurred
             .asObservable()
             .observe(on: MainScheduler.asyncInstance)
@@ -186,25 +197,9 @@ extension RSSearchListViewController: UITableViewDataSource {
         
         if repos.indices.contains(indexPath.row) {
             let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.rsSearchTableViewCellDefault, for: indexPath)!
+            
             let repo = repos[indexPath.row]
-            
-            if let urlString = repo.avatarURL, let url = URL(string: urlString) {
-                RSImageDownloadUseCaseFactory.instance.downloadImage(url: url)
-                    .asObservable()
-                    .observe(on: MainScheduler.asyncInstance)
-                    .bind(to: cell.thumbnailImageView.rx.image)
-                    .disposed(by: cell.disposeBag)
-            }
-            
-            cell.ownerLabel.attributedText = .Body2(repo.owner ?? "", with: [.foregroundColor: R.color.textGrey() as Any])
-            cell.titleLabel.attributedText = .H4(repo.name ?? "")
-            
-            let paragraphStyle = NSMutableParagraphStyle()
-            paragraphStyle.lineHeightMultiple = 1.28
-            paragraphStyle.lineBreakMode = .byWordWrapping
-            
-            cell.descriptionLabel.attributedText = .Body1(repo.description ?? "", with: [.paragraphStyle: paragraphStyle])
-            cell.starLabel.attributedText = .Body1(repo.starCount?.description ?? "", with: [.foregroundColor: R.color.textGrey() as Any])
+            cell.setRepo(repo)
             
             return cell
             
@@ -215,9 +210,13 @@ extension RSSearchListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if case .result(let repos, _, _, let nextPageExists) = self.viewModel.searchResult.value,
+        guard case .result(let repos, _, _, let nextPageExists) = self.viewModel.searchResult.value else {
+            return
+        }
+        
+        if let cellNextPage = cell as? RSSearchTableViewCellNextPage,
            (repos.indices.contains(indexPath.row) != true) && nextPageExists {
-            (cell as? RSSearchTableViewCellNextPage)?.indicatorView.startAnimating()
+            cellNextPage.indicatorView.startAnimating()
             self.viewModel.requestNextPage()
         }
     }
