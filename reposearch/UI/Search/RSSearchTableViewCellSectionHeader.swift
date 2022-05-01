@@ -12,6 +12,10 @@ class RSSearchTableViewCellSectionHeader: UITableViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
     
+    static func getCellHeight() -> CGFloat {
+        return 40.0
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
