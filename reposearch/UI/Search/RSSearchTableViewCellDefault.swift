@@ -32,9 +32,11 @@ class RSSearchTableViewCellDefault: UITableViewCell {
         paragraphStyle.lineHeightMultiple = 1.28
         paragraphStyle.lineBreakMode = .byWordWrapping
         
-        self.testLabel.attributedText = .Body1(descriptionText, with: [.paragraphStyle: paragraphStyle])
+        self.testLabel.attributedText = .Body1(descriptionText,
+                                               with: [.paragraphStyle: paragraphStyle])
         
-        let descriptionLabelHeight = self.testLabel.sizeThatFits(CGSize(width: cellWidth - 30.0, height: .infinity))
+        let descriptionLabelHeight = self.testLabel.sizeThatFits(CGSize(width: cellWidth - 30.0,
+                                                                        height: .infinity))
         return descriptionLabelHeight.height + 132.0
     }
     

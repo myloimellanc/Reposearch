@@ -43,15 +43,19 @@ class RSSearchContainerViewController: RSViewController<RSSearchContainerViewMod
     
     private lazy var searchController: UISearchController = {
         let searchVC = UISearchController(searchResultsController: searchListViewController)
+        searchVC.searchBar.tintColor = R.color.accentColor()
         
         if #available(iOS 13.0, *) {
             searchVC.searchBar.searchTextField.defaultTextAttributes = .Body1
             searchVC.searchBar.searchTextField.typingAttributes = .Body1
-            searchVC.searchBar.searchTextField.attributedPlaceholder = .Body1("Search Repositories", with: [.foregroundColor: R.color.textLightGrey() as Any])
+            searchVC.searchBar.searchTextField.attributedPlaceholder = .Body1(R.string.localizable.searchSearchBarPlaceholder(),
+                                                                              with: [.foregroundColor: R.color.textLightGrey() as Any])
             
         } else {
-            searchVC.searchBar.placeholder = "Search Repositories"
+            searchVC.searchBar.placeholder = R.string.localizable.searchSearchBarPlaceholder()
         }
+        
+        searchVC.searchBar.setValue(R.string.localizable.searchCancelButtonTitle(), forKey: "cancelButtonText")
         
         searchVC.hidesNavigationBarDuringPresentation = true
         if #available(iOS 13.0, *) {
@@ -83,11 +87,11 @@ class RSSearchContainerViewController: RSViewController<RSSearchContainerViewMod
     override func initView() {
         super.initView()
         
-        self.navigationItem.title = "Reposearch"
+        self.navigationItem.title = R.string.localizable.title()
         self.navigationItem.largeTitleDisplayMode = .always
         self.navigationItem.searchController = self.searchController
         
-        self.perPageLabel.attributedText = .Body1("Number of result per page")
+        self.perPageLabel.attributedText = .Body1(R.string.localizable.searchPerPageTitle())
         self.perPageSegmentedControl.setTitleTextAttributes(.Body2, for: .normal)
         self.perPageSegmentedControl.setTitleTextAttributes(.Body2, for: .selected)
         

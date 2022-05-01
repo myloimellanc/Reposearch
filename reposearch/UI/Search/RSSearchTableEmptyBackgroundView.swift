@@ -15,6 +15,6 @@ class RSSearchTableEmptyBackgroundView: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        self.titleLabel.attributedText = .Body1("검색 결과가 없습니다.", with: [.foregroundColor: R.color.textGrey() as Any], into: .center)
+        self.titleLabel.attributedText = .Body1(R.string.localizable.searchListEmptyTitle(), with: [.foregroundColor: R.color.textGrey() as Any], into: .center)
     }
 }

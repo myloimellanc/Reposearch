@@ -73,7 +73,8 @@ class RSSearchListViewController: RSViewController<RSSearchListViewModel> {
             .observe(on: MainScheduler.instance)
             .withUnretained(self)
             .subscribe(onNext: { vc, _ in
-                vc.delegate?.listDidScroll(from: vc, tableView: vc.tableView)
+                vc.delegate?.listDidScroll(from: vc,
+                                           tableView: vc.tableView)
             })
             .disposed(by: self.disposeBag)
         
@@ -105,12 +106,14 @@ class RSSearchListViewController: RSViewController<RSSearchListViewModel> {
                 
                 switch order {
                 case .desc:
-                    transform = CGAffineTransform(rotationAngle: -180.0 / 180.0 * CGFloat.pi)
-                case .asc:
                     transform = .identity
+                case .asc:
+                    transform = CGAffineTransform(rotationAngle: -180.0 / 180.0 * CGFloat.pi)
                 }
                 
-                UIView.animate(withDuration: 0.3, delay: 0.0, options: [.curveEaseInOut]) {
+                UIView.animate(withDuration: 0.3,
+                               delay: 0.0,
+                               options: [.curveEaseInOut]) {
                     vc.orderButton.transform = transform
                 }
             })
@@ -220,7 +223,8 @@ extension RSSearchListViewController: UITableViewDelegate {
         }
         
         let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.rsSearchTableViewCellSectionHeader.identifier) as! RSSearchTableViewCellSectionHeader
-        cell.titleLabel.attributedText = .Body1("\(totalCount) repositories found.", with: [.foregroundColor: R.color.textGrey() as Any], into: .center)
+        cell.titleLabel.attributedText = .Body1(R.string.localizable.searchListFoundedTitleParam(totalCount.description),
+                                                with: [.foregroundColor: R.color.textGrey() as Any], into: .center)
         
         return cell.contentView
     }
