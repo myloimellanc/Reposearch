@@ -132,6 +132,14 @@ class RSSearchListViewController: RSViewController<RSSearchListViewModel> {
             .observe(on: MainScheduler.instance)
             .bind(to: self.orderButton.rx.isHidden)
             .disposed(by: self.disposeBag)
+        
+        self.viewModel.errorOccurred
+            .asObservable()
+            .observe(on: MainScheduler.asyncInstance)
+            .subscribe(onNext: { error in
+                UIApplication.shared.keyWindow?.addToast(error.localizedDescription)
+            })
+            .disposed(by: self.disposeBag)
     }
 }
 
@@ -230,7 +238,7 @@ extension RSSearchListViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 40.0
+        return RSSearchTableViewCellSectionHeader.getCellHeight()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

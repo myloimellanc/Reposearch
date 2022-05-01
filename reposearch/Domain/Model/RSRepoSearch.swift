@@ -40,7 +40,7 @@ struct RSRepoSearchResult: RSDomainModel {
     let repos: [RSRepo]
     
     let totalCount: Int64
-    let isIncompleted: Bool
+    let hasIncompletedResults: Bool
 }
 
 
@@ -48,6 +48,6 @@ extension SearchRepositoriesResponse: RSDomainConvertible {
     func asDomain() throws -> RSRepoSearchResult {
         return RSRepoSearchResult(repos: try self.items.map { try $0.asDomain() },
                                   totalCount: self.total_count,
-                                  isIncompleted: self.incomplete_results)
+                                  hasIncompletedResults: self.incomplete_results)
     }
 }

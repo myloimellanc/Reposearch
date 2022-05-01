@@ -45,6 +45,7 @@ final class RSRepoSearchUseCase: RSUseCase {
 extension RSRepoSearchUseCase: RSRepoSearchUseCaseInterface {
     func searchRepos(searchQuery: RSRepoSearchQuery) -> Single<(repos: [RSRepo], totalCount: Int64, nextPageExists: Bool)> {
         return RSRepoRepositoryFactory.instance.getRepoSearchResult(searchQuery: searchQuery)
+            .observe(on: ConcurrentDispatchQueueScheduler.RSUseCase)
             .map { searchResult in
                 let (quotient, remainder) = searchResult.totalCount.quotientAndRemainder(dividingBy: searchQuery.perPage)
                 let lastPage = (quotient > 0)
@@ -52,8 +53,27 @@ extension RSRepoSearchUseCase: RSRepoSearchUseCaseInterface {
                         ? quotient + 1
                         : quotient
                     : 1
+                let nextPageExists = (searchResult.repos.isEmpty != true)
+                    ? searchQuery.page < lastPage
+                    : false
                 
-                return (searchResult.repos, searchResult.totalCount, searchQuery.page < lastPage)
+                return (searchResult.repos, searchResult.totalCount, nextPageExists)
+            }
+            .catch { error in
+                if let rsError = error as? RSError, case .http(let responseCode) = rsError {
+                    switch responseCode {
+                    case 304:
+                        throw RSError.default("Not modified")
+                    case 422:
+                        throw RSError.default("Validation failed")
+                    case 503:
+                        throw RSError.default("Service unavailable")
+                    default:
+                        break
+                    }
+                }
+                
+                throw error
             }
     }
 }

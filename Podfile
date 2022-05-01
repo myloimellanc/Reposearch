@@ -21,7 +21,7 @@ end
 
 def utility_pods
   pod 'R.swift', '~> 6.1.0'
-
+  pod "DeviceKit", '~> 4.0'
 end
 
 

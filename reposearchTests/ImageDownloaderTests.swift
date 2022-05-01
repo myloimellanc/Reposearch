@@ -20,14 +20,15 @@ class ImageDownloaderTests: XCTestCase {
         RSImageDownloader.shared.clearCache()
     }
     
-    func testSampleImageDownload() throws {
-        let sampleImageURLString = "https://picsum.photos/24"
-        guard let sampleImageURL = URL(string: sampleImageURLString) else {
+    private let sampleImageURLString = "https://picsum.photos/24"
+    
+    private func downloadNotCachedImage() throws {
+        guard let sampleImageURL = URL(string: self.sampleImageURLString) else {
             XCTFail("incorrect url")
             return
         }
         
-        let downloadExpectation = XCTestExpectation(description: "Download image not cached")
+        let downloadExpectation = XCTestExpectation(description: "Request not cached image")
         let downloadDisposable = RSImageDownloader.shared.download(url: sampleImageURL)
             .subscribe(onSuccess: { image, isCached in
                 XCTAssertFalse(isCached)
@@ -43,11 +44,16 @@ class ImageDownloaderTests: XCTestCase {
         }
         
         wait(for: [downloadExpectation], timeout: 10.0)
+    }
+    
+    private func downloadCachedImage() throws {
+        guard let sampleImageURL = URL(string: self.sampleImageURLString) else {
+            XCTFail("incorrect url")
+            return
+        }
         
-        let sampleImageURLRequest = URLRequest(url: sampleImageURL)
-        
-        let cacheExpectation = XCTestExpectation(description: "Download image cached")
-        let cacheDisposable = RSImageDownloader.shared.download(urlRequest: sampleImageURLRequest)
+        let cacheExpectation = XCTestExpectation(description: "Request cached image")
+        let cacheDisposable = RSImageDownloader.shared.download(url: sampleImageURL)
             .subscribe(onSuccess: { image, isCached in
                 XCTAssertTrue(isCached)
                 
@@ -62,5 +68,14 @@ class ImageDownloaderTests: XCTestCase {
         }
         
         wait(for: [cacheExpectation], timeout: 2.0)
+        
+    }
+    
+    func testSampleImageDownload() throws {
+        try self.downloadNotCachedImage()
+        try self.downloadCachedImage()
+        
+        RSImageDownloader.shared.clearCache()
+        try self.downloadNotCachedImage()
     }
 }

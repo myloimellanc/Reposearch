@@ -23,7 +23,7 @@ extension RSRepoRepositoryMockup: RSRepoRepositoryInterface {
     func getRepoSearchResult(searchQuery: RSRepoSearchQuery) -> Single<RSRepoSearchResult> {
         let searchResult = RSRepoSearchResult(repos: [RSRepo(owner: "", avatarURL: "", name: "", description: "", starCount: 0)],
                                               totalCount: 1,
-                                              isIncompleted: false)
+                                              hasIncompletedResults: false)
         
         return .just(searchResult)
     }

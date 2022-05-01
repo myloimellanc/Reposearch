@@ -8,6 +8,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import DeviceKit
 
 
 fileprivate extension RSSearchSort {
@@ -21,9 +22,20 @@ fileprivate extension RSSearchSort {
             return "Forks"
         case .helpWantedIssues:
             return "Issues"
+            
         case .updated:
-            // TODO: iPhone SE 1세대에서만 말줄임 처리됨
-            return "Updated"
+            switch Device.current {
+            case .iPhoneSE:
+                return "Update"
+                
+            #if targetEnvironment(simulator)
+            case .simulator(.iPhoneSE):
+                return "Update"
+            #endif
+                
+            default:
+                return "Updated"
+            }
         }
     }
 }
