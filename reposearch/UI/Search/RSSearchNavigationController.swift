@@ -10,7 +10,13 @@ import UIKit
 
 class RSSearchNavigationController: RSNavigationController {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func initView() {
+        super.initView()
+        
+        self.navigationBar.titleTextAttributes = .H4
+        
+        if #available(iOS 13.0, *) {
+            self.navigationBar.largeTitleTextAttributes = .Signature
+        }
     }
 }

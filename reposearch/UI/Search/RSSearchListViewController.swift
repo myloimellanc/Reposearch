@@ -22,6 +22,11 @@ fileprivate extension RSSearchOrder {
 }
 
 
+protocol RSSearchListViewControllerDelegate: AnyObject {
+    func listDidScroll(from viewController: RSSearchListViewController, tableView: UITableView)
+}
+
+
 class RSSearchListViewController: RSViewController<RSSearchListViewModel> {
     
     @IBOutlet weak var tableView: UITableView!
@@ -34,6 +39,8 @@ class RSSearchListViewController: RSViewController<RSSearchListViewModel> {
         let control = UIRefreshControl()
         return control
     }()
+    
+    weak var delegate: RSSearchListViewControllerDelegate?
     
     func setSearchText(_ text: String) {
         self.viewModel.setSearchText(text)
@@ -60,6 +67,16 @@ class RSSearchListViewController: RSViewController<RSSearchListViewModel> {
         
         self.tableView.dataSource = self
         self.tableView.delegate = self
+        
+        self.tableView.panGestureRecognizer.rx.event
+            .asObservable()
+            .observe(on: MainScheduler.instance)
+            .withUnretained(self)
+            .subscribe(onNext: { vc, _ in
+                vc.delegate?.listDidScroll(from: vc,
+                                           tableView: vc.tableView)
+            })
+            .disposed(by: self.disposeBag)
         
         self.refreshControl.rx.controlEvent(.valueChanged)
             .asObservable()
@@ -89,12 +106,14 @@ class RSSearchListViewController: RSViewController<RSSearchListViewModel> {
                 
                 switch order {
                 case .desc:
-                    transform = CGAffineTransform(rotationAngle: -180.0 / 180.0 * CGFloat.pi)
-                case .asc:
                     transform = .identity
+                case .asc:
+                    transform = CGAffineTransform(rotationAngle: -180.0 / 180.0 * CGFloat.pi)
                 }
                 
-                UIView.animate(withDuration: 0.3, delay: 0.0, options: [.curveEaseInOut]) {
+                UIView.animate(withDuration: 0.3,
+                               delay: 0.0,
+                               options: [.curveEaseInOut]) {
                     vc.orderButton.transform = transform
                 }
             })
@@ -169,10 +188,15 @@ extension RSSearchListViewController: UITableViewDataSource {
                     .disposed(by: cell.disposeBag)
             }
             
-            cell.ownerLabel.text = repo.owner ?? ""
-            cell.titleLabel.text = repo.name ?? ""
-            cell.descriptionLabel.text = repo.description ?? ""
-            cell.starLabel.text = repo.starCount?.description ?? ""
+            cell.ownerLabel.attributedText = .Body2(repo.owner ?? "", with: [.foregroundColor: R.color.textGrey() as Any])
+            cell.titleLabel.attributedText = .H4(repo.name ?? "")
+            
+            let paragraphStyle = NSMutableParagraphStyle()
+            paragraphStyle.lineHeightMultiple = 1.28
+            paragraphStyle.lineBreakMode = .byWordWrapping
+            
+            cell.descriptionLabel.attributedText = .Body1(repo.description ?? "", with: [.paragraphStyle: paragraphStyle])
+            cell.starLabel.attributedText = .Body1(repo.starCount?.description ?? "", with: [.foregroundColor: R.color.textGrey() as Any])
             
             return cell
             
@@ -199,7 +223,8 @@ extension RSSearchListViewController: UITableViewDelegate {
         }
         
         let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.rsSearchTableViewCellSectionHeader.identifier) as! RSSearchTableViewCellSectionHeader
-        cell.titleLabel.text = "\(totalCount) repositories found."
+        cell.titleLabel.attributedText = .Body1(R.string.localizable.searchListFoundedTitleParam(totalCount.description),
+                                                with: [.foregroundColor: R.color.textGrey() as Any], into: .center)
         
         return cell.contentView
     }
@@ -209,12 +234,17 @@ extension RSSearchListViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if case .result(let repos, _, _, let nextPageExists) = self.viewModel.searchResult.value,
-           (repos.indices.contains(indexPath.row) != true) && nextPageExists {
-            return RSSearchTableViewCellNextPage.getCellHeight()
+        guard case .result(let repos, _, _, _) = self.viewModel.searchResult.value else {
+            return 0.0
+        }
+        
+        if repos.indices.contains(indexPath.row) {
+            let repo = repos[indexPath.row]
+            return RSSearchTableViewCellDefault.getCellHeight(by: repo.description ?? "",
+                                                              cellWidth: tableView.bounds.width)
             
         } else {
-            return RSSearchTableViewCellDefault.getCellHeight(by: "")
+            return RSSearchTableViewCellNextPage.getCellHeight()
         }
     }
 }
