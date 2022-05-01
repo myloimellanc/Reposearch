@@ -12,5 +12,5 @@
 "Search.CancelButton.Title" = "Cancel";
 "Search.PerPage.Title" = "Number of result per page";
 
-"Search.List.Founded.TitleParam" = "%@ repositories found.";
-"Search.List.Empty.Title" = "Repositories not found.";
+"SearchList.Founded.TitleParam" = "%@ repositories found.";
+"SearchList.Empty.Title" = "Repositories not found.";

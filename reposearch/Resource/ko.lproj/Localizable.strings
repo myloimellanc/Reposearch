@@ -12,5 +12,5 @@
 "Search.CancelButton.Title" = "취소";
 "Search.PerPage.Title" = "페이지 별 검색 수";
 
-"Search.List.Founded.TitleParam" = "총 %@개의 검색 결과";
-"Search.List.Empty.Title" = "검색 결과가 없습니다.";
+"SearchList.Founded.TitleParam" = "총 %@개의 검색 결과";
+"SearchList.Empty.Title" = "검색 결과가 없습니다.";
