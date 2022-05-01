@@ -76,7 +76,7 @@ extension RSAPI: RSAPIInterface {
                             perPage: Int64,
                             page: Int64) -> Single<SearchRepositoriesResponse> {
         let headers: Dictionary<String, String> = [
-            "Authorization": "Basic " + "\(self.accessToken)",
+            "Authorization": "token \(self.accessToken)",
             "accept": "application/vnd.github.v3+json"
         ]
         
