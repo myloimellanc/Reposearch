@@ -159,8 +159,8 @@ class RSSearchListViewModel: RSViewModel {
                                                      self.searchResult.asObservable()))
             .compactMap { query, result -> RSRepoSearchQuery? in
                 guard let currentQuery = query,
-                      case .result(_, _, let lastPage, let isIncompleted) = result,
-                      isIncompleted else {
+                      case .result(_, _, let lastPage, let nextPageExists) = result,
+                      nextPageExists else {
                     return nil
                 }
                 
