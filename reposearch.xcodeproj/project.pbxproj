@@ -57,6 +57,7 @@
 		BFF330DC28199310002F0154 /* RSUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF330DB28199310002F0154 /* RSUseCase.swift */; };
 		BFF330DF2819940B002F0154 /* RSDomainConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF330DE2819940B002F0154 /* RSDomainConvertible.swift */; };
 		BFF330E128199720002F0154 /* RepoSearchUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF330E028199720002F0154 /* RepoSearchUseCaseTests.swift */; };
+		BFF3AC77281EFB0A009383A4 /* String+reposearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF3AC76281EFB0A009383A4 /* String+reposearch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -134,6 +135,7 @@
 		BFF330DB28199310002F0154 /* RSUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSUseCase.swift; sourceTree = "<group>"; };
 		BFF330DE2819940B002F0154 /* RSDomainConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSDomainConvertible.swift; sourceTree = "<group>"; };
 		BFF330E028199720002F0154 /* RepoSearchUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoSearchUseCaseTests.swift; sourceTree = "<group>"; };
+		BFF3AC76281EFB0A009383A4 /* String+reposearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+reposearch.swift"; sourceTree = "<group>"; };
 		F96B30A4814770DAD34EFDAB /* libPods-reposearch.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-reposearch.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -193,6 +195,7 @@
 				BF112C8A28196FA7003782B3 /* Observable+reposearch.swift */,
 				BF112C9028197424003782B3 /* Scheduler+reposearch.swift */,
 				BF0E4C25281E7B1400A571C9 /* AttributedString+reposearch.swift */,
+				BFF3AC76281EFB0A009383A4 /* String+reposearch.swift */,
 				BF0AB700281EC2C900CE44D2 /* Window+reposearch.swift */,
 			);
 			path = Extension;
@@ -576,6 +579,7 @@
 				BFF330DA281992CC002F0154 /* RSDomainModel.swift in Sources */,
 				BF7A1829281AC4710059F34F /* RSRepoRepository.swift in Sources */,
 				BFDDE99328197C8100F3DA34 /* RSSearchOrder.swift in Sources */,
+				BFF3AC77281EFB0A009383A4 /* String+reposearch.swift in Sources */,
 				BFF330D428199204002F0154 /* RSRepo.swift in Sources */,
 				BFA700AF281DA8A600F8B57F /* RSSearchTableViewCellSectionHeader.swift in Sources */,
 				BFF330DF2819940B002F0154 /* RSDomainConvertible.swift in Sources */,
@@ -690,7 +694,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = Q734ES4968;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = reposearch/Info.plist;
@@ -805,7 +809,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = Q734ES4968;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = reposearch/Info.plist;
@@ -915,7 +919,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = Q734ES4968;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = reposearch/Info.plist;
@@ -1087,7 +1091,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = Q734ES4968;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = reposearch/Info.plist;
@@ -1120,7 +1124,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = Q734ES4968;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = reposearch/Info.plist;

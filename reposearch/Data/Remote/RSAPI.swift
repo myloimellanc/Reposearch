@@ -60,7 +60,8 @@ struct RSAPI {
     
     init() {
         guard let infoDict = Bundle.main.infoDictionary,
-              let token = infoDict["GithubAccessToken"] as? String else {
+              let utf8Base64EncodedToken = infoDict["GithubAccessTokenUTF8Base64"] as? String,
+              let token = utf8Base64EncodedToken.utf8Base64Decoded() else {
             fatalError("Cannot find access token.")
         }
         
