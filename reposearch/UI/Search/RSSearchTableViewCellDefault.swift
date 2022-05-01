@@ -19,8 +19,29 @@ class RSSearchTableViewCellDefault: UITableViewCell {
     
     private(set) var disposeBag = DisposeBag()
     
-    static func getCellHeight(by descriptionText: String) -> CGFloat {
-        return 162.0
+    private static let testLabel: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .natural
+        label.numberOfLines = 0
+        
+        return label
+    }()
+    
+    static func getCellHeight(by descriptionText: String, cellWidth: CGFloat) -> CGFloat {
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineHeightMultiple = 1.28
+        paragraphStyle.lineBreakMode = .byWordWrapping
+        
+        let attributedString = NSAttributedString(string: descriptionText, attributes: [
+            .font: UIFont.systemFont(ofSize: 17.0, weight: .regular) as Any,
+            .foregroundColor: UIColor.black,
+            .paragraphStyle: paragraphStyle
+        ])
+        
+        self.testLabel.attributedText = attributedString
+        
+        let descriptionLabelHeight = self.testLabel.sizeThatFits(CGSize(width: cellWidth - 30.0, height: .infinity))
+        return descriptionLabelHeight.height + 132.0
     }
     
     override func awakeFromNib() {

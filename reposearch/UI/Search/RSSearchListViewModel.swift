@@ -128,9 +128,9 @@ class RSSearchListViewModel: RSViewModel {
             .disposed(by: self.disposeBag)
         
         let firstPageSearchQuery = Observable.combineLatest(self.searchText.asObservable(),
-                                                   self.perPage.asObservable(),
-                                                   self.sort.asObservable(),
-                                                   self.order.asObservable())
+                                                            self.perPage.asObservable(),
+                                                            self.sort.asObservable(),
+                                                            self.order.asObservable())
             .map { text, per, sort, order -> RSRepoSearchQuery? in
                 guard let query = text, let perPage = per else {
                     return nil

@@ -22,6 +22,7 @@ fileprivate extension RSSearchSort {
         case .helpWantedIssues:
             return "Issues"
         case .updated:
+            // TODO: iPhone SE 1세대에서만 말줄임 처리됨
             return "Updated"
         }
     }
@@ -74,6 +75,10 @@ class RSSearchContainerViewController: RSViewController<RSSearchContainerViewMod
         self.navigationItem.title = "Reposearch"
         self.navigationItem.largeTitleDisplayMode = .always
         self.navigationItem.searchController = self.searchController
+        
+        self.viewModel.perPages
+            .enumerated()
+            .forEach { self.perPageSegmentedControl.setTitle($1.description, forSegmentAt: $0) }
     }
     
     override func viewDidLoad() {
@@ -87,10 +92,6 @@ class RSSearchContainerViewController: RSViewController<RSSearchContainerViewMod
                 vc.searchListViewController.setSearchText(text)
             })
             .disposed(by: self.disposeBag)
-        
-        self.viewModel.perPages
-            .enumerated()
-            .forEach { self.perPageSegmentedControl.setTitle($1.description, forSegmentAt: $0) }
         
         self.perPageSegmentedControl.rx.selectedSegmentIndex
             .asObservable()

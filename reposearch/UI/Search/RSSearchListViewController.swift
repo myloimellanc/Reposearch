@@ -171,7 +171,18 @@ extension RSSearchListViewController: UITableViewDataSource {
             
             cell.ownerLabel.text = repo.owner ?? ""
             cell.titleLabel.text = repo.name ?? ""
-            cell.descriptionLabel.text = repo.description ?? ""
+            
+            let paragraphStyle = NSMutableParagraphStyle()
+            paragraphStyle.lineHeightMultiple = 1.28
+            paragraphStyle.lineBreakMode = .byWordWrapping
+            
+            let attributedString = NSAttributedString(string: repo.description ?? "", attributes: [
+                .font: UIFont.systemFont(ofSize: 17.0, weight: .regular) as Any,
+                .foregroundColor: UIColor.black,
+                .paragraphStyle: paragraphStyle
+            ])
+            
+            cell.descriptionLabel.attributedText = attributedString
             cell.starLabel.text = repo.starCount?.description ?? ""
             
             return cell
@@ -209,12 +220,17 @@ extension RSSearchListViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if case .result(let repos, _, _, let nextPageExists) = self.viewModel.searchResult.value,
-           (repos.indices.contains(indexPath.row) != true) && nextPageExists {
-            return RSSearchTableViewCellNextPage.getCellHeight()
+        guard case .result(let repos, _, _, _) = self.viewModel.searchResult.value else {
+            return 0.0
+        }
+        
+        if repos.indices.contains(indexPath.row) {
+            let repo = repos[indexPath.row]
+            return RSSearchTableViewCellDefault.getCellHeight(by: repo.description ?? "",
+                                                              cellWidth: tableView.bounds.width)
             
         } else {
-            return RSSearchTableViewCellDefault.getCellHeight(by: "")
+            return RSSearchTableViewCellNextPage.getCellHeight()
         }
     }
 }
