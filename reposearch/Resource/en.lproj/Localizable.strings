@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  reposearch
+
+  Created by mellancmyloi on 2022/04/25.
+  
+*/
+
+"Title" = "Reposearch";
+
+"Search.SearchBar.Placeholder" = "Search Repositories";
+"Search.CancelButton.Title" = "Cancel";
+"Search.PerPage.Title" = "Number of result per page";
+
+"SearchList.Founded.TitleParam" = "%@ repositories found.";
+"SearchList.Empty.Title" = "Repositories not found.";

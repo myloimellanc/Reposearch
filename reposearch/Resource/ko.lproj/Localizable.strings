@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  reposearch
+
+  Created by mellancmyloi on 2022/04/25.
+  
+*/
+
+"Title" = "Reposearch";
+
+"Search.SearchBar.Placeholder" = "레포지토리 검색";
+"Search.CancelButton.Title" = "취소";
+"Search.PerPage.Title" = "페이지 별 검색 수";
+
+"SearchList.Founded.TitleParam" = "총 %@개의 검색 결과";
+"SearchList.Empty.Title" = "검색 결과가 없습니다.";
