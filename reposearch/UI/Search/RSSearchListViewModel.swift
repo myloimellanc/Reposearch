@@ -127,7 +127,11 @@ class RSSearchListViewModel: RSViewModel {
             .bind(to: self.searchResult)
             .disposed(by: self.disposeBag)
         
-        let firstPageSearchQuery = Observable.combineLatest(self.searchText.asObservable(),
+        let distinctSearchText = self.searchText
+            .asObservable()
+            .distinctUntilChanged()
+        
+        let firstPageSearchQuery = Observable.combineLatest(distinctSearchText,
                                                             self.perPage.asObservable(),
                                                             self.sort.asObservable(),
                                                             self.order.asObservable())

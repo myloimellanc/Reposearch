@@ -304,11 +304,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kkE-j5-wr7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <view contentMode="scaleToFill" id="AFM-as-5K8" customClass="RSSearchTableIndicatorBackgroundView" customModule="reposearch" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="MtA-2X-DHV">
-                            <rect key="frame" x="197" y="90" width="20" height="20"/>
+                            <rect key="frame" x="197" y="200" width="20" height="20"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="20" id="Okd-mG-T0V"/>
@@ -320,7 +320,7 @@
                     <viewLayoutGuide key="safeArea" id="NtW-eq-dGJ"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="MtA-2X-DHV" firstAttribute="centerY" secondItem="AFM-as-5K8" secondAttribute="centerY" id="9QU-IB-4rn"/>
+                        <constraint firstItem="MtA-2X-DHV" firstAttribute="top" secondItem="AFM-as-5K8" secondAttribute="top" constant="200" id="ZiY-HE-zph"/>
                         <constraint firstItem="MtA-2X-DHV" firstAttribute="centerX" secondItem="AFM-as-5K8" secondAttribute="centerX" id="p8n-6f-wUx"/>
                     </constraints>
                     <connections>
@@ -328,11 +328,11 @@
                     </connections>
                 </view>
                 <view contentMode="scaleToFill" id="wq2-c1-VEP" customClass="RSSearchTableEmptyBackgroundView" customModule="reposearch" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="검색 결과가 없습니다." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e3g-q6-hYN">
-                            <rect key="frame" x="15" y="89.5" width="384" height="21"/>
+                            <rect key="frame" x="15" y="139.5" width="384" height="21"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

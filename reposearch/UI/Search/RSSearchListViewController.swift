@@ -22,6 +22,11 @@ fileprivate extension RSSearchOrder {
 }
 
 
+protocol RSSearchListViewControllerDelegate: AnyObject {
+    func listDidScroll(from viewController: RSSearchListViewController, tableView: UITableView)
+}
+
+
 class RSSearchListViewController: RSViewController<RSSearchListViewModel> {
     
     @IBOutlet weak var tableView: UITableView!
@@ -34,6 +39,8 @@ class RSSearchListViewController: RSViewController<RSSearchListViewModel> {
         let control = UIRefreshControl()
         return control
     }()
+    
+    weak var delegate: RSSearchListViewControllerDelegate?
     
     func setSearchText(_ text: String) {
         self.viewModel.setSearchText(text)
@@ -60,6 +67,15 @@ class RSSearchListViewController: RSViewController<RSSearchListViewModel> {
         
         self.tableView.dataSource = self
         self.tableView.delegate = self
+        
+        self.tableView.panGestureRecognizer.rx.event
+            .asObservable()
+            .observe(on: MainScheduler.instance)
+            .withUnretained(self)
+            .subscribe(onNext: { vc, _ in
+                vc.delegate?.listDidScroll(from: vc, tableView: vc.tableView)
+            })
+            .disposed(by: self.disposeBag)
         
         self.refreshControl.rx.controlEvent(.valueChanged)
             .asObservable()

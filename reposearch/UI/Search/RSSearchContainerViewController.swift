@@ -36,6 +36,8 @@ class RSSearchContainerViewController: RSViewController<RSSearchContainerViewMod
     
     private lazy var searchListViewController: RSSearchListViewController = {
         let vc = R.storyboard.search.rsSearchListViewController()!
+        vc.delegate = self
+        
         return vc
     }()
     
@@ -102,5 +104,14 @@ class RSSearchContainerViewController: RSViewController<RSSearchContainerViewMod
                 vc.searchListViewController.setPerPage(perPage)
             })
             .disposed(by: self.disposeBag)
+    }
+}
+
+
+extension RSSearchContainerViewController: RSSearchListViewControllerDelegate {
+    func listDidScroll(from viewController: RSSearchListViewController, tableView: UITableView) {
+        if self.searchController.searchBar.isFirstResponder {
+            self.searchController.searchBar.resignFirstResponder()
+        }
     }
 }
