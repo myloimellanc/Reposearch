@@ -2,9 +2,7 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>GithubAccessToken</key>
-	<string>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</string>
-	<key>CFBundleDisplayName</key>
-	<string>$(RS_DISPLAY_NAME)</string>
+	<key>GithubAccessTokenUTF8Base64</key>
+	<string>Z2hwXzBMTUhMM1I2MlhuWTFVeXRUSldacTBPaTVaS29qTDRDZ0ZGbw==</string>
 </dict>
 </plist>
