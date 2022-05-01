@@ -12,20 +12,12 @@ import RxRelay
 
 class RSSearchListViewModel: RSViewModel {
     
-    enum SearchResult {
-        case blank
-        case searching
-        case result(repos: [RSRepo], totalCount: Int64, lastPage: Int64, nextPageExists: Bool)
-        case emptyResult
-    }
-    
-    let searchResult = BehaviorRelay<RSSearchListViewModel.SearchResult>(value: .blank)
-    
     let searchText = BehaviorRelay<String?>(value: nil)
     let perPage = BehaviorRelay<Int64?>(value: nil)
     
     let sort = BehaviorRelay<RSSearchSort>(value: .bestMatch)
     let order = BehaviorRelay<RSSearchOrder>(value: .desc)
+    
     
     enum Search {
         case `default`(query: RSRepoSearchQuery?)
@@ -37,6 +29,15 @@ class RSSearchListViewModel: RSViewModel {
     private let nextPageRequestEvent = PublishRelay<Void>()
     private let refreshEvent = PublishRelay<Void>()
     
+    
+    enum SearchResult {
+        case blank
+        case searching
+        case result(repos: [RSRepo], totalCount: Int64, lastPage: Int64, nextPageExists: Bool)
+        case emptyResult
+    }
+    
+    let searchResult = BehaviorRelay<RSSearchListViewModel.SearchResult>(value: .blank)
     let errorOccurred = PublishRelay<Error>()
     
     required init() {
@@ -46,22 +47,23 @@ class RSSearchListViewModel: RSViewModel {
             .asObservable()
             .withUnretained(self)
             .flatMapLatest { vm, search -> Observable<RSSearchListViewModel.SearchResult> in
+                let observable: Observable<RSSearchListViewModel.SearchResult>
+                
                 switch search {
                 case .default(let query):
                     guard let searchQuery = query else {
-                        return .just(.blank)
+                        observable = .just(.blank)
+                        break
                     }
                     
-                    return Observable
+                    observable = Observable
                         .create { observer in
                             observer.onNext(.blank)
                             
                             let disposable = Single.just(())
                                 .delay(.seconds(1), scheduler: MainScheduler.asyncInstance)
                                 .do(onSuccess: { observer.onNext(.searching) })
-                                .flatMap {
-                                    RSRepoSearchUseCaseFactory.instance.searchRepos(searchQuery: searchQuery)
-                                }
+                                .flatMap { RSRepoSearchUseCaseFactory.instance.searchRepos(searchQuery: searchQuery) }
                                 .subscribe(onSuccess: { searchResult in
                                     if searchResult.repos.isEmpty && (searchResult.nextPageExists != true) {
                                         observer.onNext(.emptyResult)
@@ -79,19 +81,13 @@ class RSSearchListViewModel: RSViewModel {
                             
                             return Disposables.create([disposable])
                         }
-                        .catchErrorAndComplete { error in
-                            vm.errorOccurred.accept(error)
-                        }
                         
                 case .nextPage(let nextQuery):
-                    return RSRepoSearchUseCaseFactory.instance.searchRepos(searchQuery: nextQuery)
+                    observable = RSRepoSearchUseCaseFactory.instance.searchRepos(searchQuery: nextQuery)
                         .asObservable()
                         .withLatestFrom(vm.searchResult.asObservable()) { ($1, $0) }
                         .map { currentResult, nextResult -> RSSearchListViewModel.SearchResult in
                             guard case .result(let repos, _, _, _) = currentResult else {
-                                
-                                // TODO: 로직 정리 필요
-                                
                                 return .emptyResult
                             }
                             
@@ -101,12 +97,9 @@ class RSSearchListViewModel: RSViewModel {
                                            lastPage: nextQuery.page,
                                            nextPageExists: nextResult.nextPageExists)
                         }
-                        .catchErrorAndComplete { error in
-                            vm.errorOccurred.accept(error)
-                        }
                     
                 case .refresh(let firstPageQuery):
-                    return RSRepoSearchUseCaseFactory.instance.searchRepos(searchQuery: firstPageQuery)
+                    observable = RSRepoSearchUseCaseFactory.instance.searchRepos(searchQuery: firstPageQuery)
                         .asObservable()
                         .map { searchResult -> RSSearchListViewModel.SearchResult in
                             if searchResult.repos.isEmpty && (searchResult.nextPageExists != true) {
@@ -119,10 +112,10 @@ class RSSearchListViewModel: RSViewModel {
                                                nextPageExists: searchResult.nextPageExists)
                             }
                         }
-                        .catchErrorAndComplete { error in
-                            vm.errorOccurred.accept(error)
-                        }
                 }
+                
+                return observable
+                    .catchErrorAndComplete { vm.errorOccurred.accept($0) }
             }
             .bind(to: self.searchResult)
             .disposed(by: self.disposeBag)
@@ -136,7 +129,8 @@ class RSSearchListViewModel: RSViewModel {
                                                             self.sort.asObservable(),
                                                             self.order.asObservable())
             .map { text, per, sort, order -> RSRepoSearchQuery? in
-                guard let query = text, let perPage = per else {
+                guard let query = text,
+                      let perPage = per else {
                     return nil
                 }
                 
@@ -159,8 +153,8 @@ class RSSearchListViewModel: RSViewModel {
                                                      self.searchResult.asObservable()))
             .compactMap { query, result -> RSRepoSearchQuery? in
                 guard let currentQuery = query,
-                      case .result(_, _, let lastPage, let isIncompleted) = result,
-                      isIncompleted else {
+                      case .result(_, _, let lastPage, let nextPageExists) = result,
+                      nextPageExists else {
                     return nil
                 }
                 

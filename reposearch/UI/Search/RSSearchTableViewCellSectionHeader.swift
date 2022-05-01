@@ -12,6 +12,10 @@ class RSSearchTableViewCellSectionHeader: UITableViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
     
+    static func getCellHeight() -> CGFloat {
+        return 40.0
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -26,5 +30,9 @@ class RSSearchTableViewCellSectionHeader: UITableViewCell {
     
     private func resetView() {
         self.titleLabel.text?.removeAll()
+    }
+    
+    deinit {
+        print("[DEINIT]", String(describing: type(of: self)))
     }
 }

@@ -11,6 +11,7 @@
 		BF0250582817FB5600F3683F /* RSNetworkMockup.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0250562817FB3500F3683F /* RSNetworkMockup.swift */; };
 		BF09C30B281AEC68006C2359 /* RSSearchTableEmptyBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF09C30A281AEC68006C2359 /* RSSearchTableEmptyBackgroundView.swift */; };
 		BF09C30D281AEC74006C2359 /* RSSearchTableIndicatorBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF09C30C281AEC74006C2359 /* RSSearchTableIndicatorBackgroundView.swift */; };
+		BF0AB701281EC2C900CE44D2 /* Window+reposearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0AB700281EC2C900CE44D2 /* Window+reposearch.swift */; };
 		BF0E4C26281E7B1400A571C9 /* AttributedString+reposearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0E4C25281E7B1400A571C9 /* AttributedString+reposearch.swift */; };
 		BF0E4C28281E7B6200A571C9 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF0E4C27281E7B6200A571C9 /* Color.xcassets */; };
 		BF112C8B28196FA7003782B3 /* Observable+reposearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF112C8A28196FA7003782B3 /* Observable+reposearch.swift */; };
@@ -77,6 +78,7 @@
 		BF0250562817FB3500F3683F /* RSNetworkMockup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSNetworkMockup.swift; sourceTree = "<group>"; };
 		BF09C30A281AEC68006C2359 /* RSSearchTableEmptyBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSearchTableEmptyBackgroundView.swift; sourceTree = "<group>"; };
 		BF09C30C281AEC74006C2359 /* RSSearchTableIndicatorBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSearchTableIndicatorBackgroundView.swift; sourceTree = "<group>"; };
+		BF0AB700281EC2C900CE44D2 /* Window+reposearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Window+reposearch.swift"; sourceTree = "<group>"; };
 		BF0E4C25281E7B1400A571C9 /* AttributedString+reposearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AttributedString+reposearch.swift"; sourceTree = "<group>"; };
 		BF0E4C27281E7B6200A571C9 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		BF112C8A28196FA7003782B3 /* Observable+reposearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+reposearch.swift"; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 				BF112C8A28196FA7003782B3 /* Observable+reposearch.swift */,
 				BF112C9028197424003782B3 /* Scheduler+reposearch.swift */,
 				BF0E4C25281E7B1400A571C9 /* AttributedString+reposearch.swift */,
+				BF0AB700281EC2C900CE44D2 /* Window+reposearch.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -552,6 +555,7 @@
 				BFF330D2281991F8002F0154 /* RSRepoSearch.swift in Sources */,
 				BFCA9ABE28184487002E9061 /* RSSearchListViewModel.swift in Sources */,
 				BF09C30B281AEC68006C2359 /* RSSearchTableEmptyBackgroundView.swift in Sources */,
+				BF0AB701281EC2C900CE44D2 /* Window+reposearch.swift in Sources */,
 				BF4D4344281AD76D00C1DB41 /* RSImageDownloader.swift in Sources */,
 				BF0250582817FB5600F3683F /* RSNetworkMockup.swift in Sources */,
 				BFA700A9281D91EF00F8B57F /* RSImageDownloadUseCase.swift in Sources */,
@@ -686,7 +690,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = Q734ES4968;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = reposearch/Info.plist;
@@ -801,7 +805,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = Q734ES4968;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = reposearch/Info.plist;
@@ -911,7 +915,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = Q734ES4968;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = reposearch/Info.plist;
@@ -1083,7 +1087,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = Q734ES4968;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = reposearch/Info.plist;
@@ -1116,7 +1120,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = Q734ES4968;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = reposearch/Info.plist;

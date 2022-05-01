@@ -11,4 +11,8 @@ import UIKit
 class RSSearchTableIndicatorBackgroundView: UIView {
     
     @IBOutlet weak var indicatorView: UIActivityIndicatorView!
+    
+    deinit {
+        print("[DEINIT]", String(describing: type(of: self)))
+    }
 }

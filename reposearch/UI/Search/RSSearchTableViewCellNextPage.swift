@@ -21,4 +21,8 @@ class RSSearchTableViewCellNextPage: UITableViewCell {
         
         self.indicatorView.stopAnimating()
     }
+    
+    deinit {
+        print("[DEINIT]", String(describing: type(of: self)))
+    }
 }

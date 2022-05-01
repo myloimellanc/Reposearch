@@ -3,6 +3,8 @@
 <plist version="1.0">
 <dict>
 	<key>GithubAccessToken</key>
-	<string>ffd67daf84fc2a3674fb7ee92a19c34f7488eac9</string>
+	<string>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</string>
+	<key>CFBundleDisplayName</key>
+	<string>$(RS_DISPLAY_NAME)</string>
 </dict>
 </plist>

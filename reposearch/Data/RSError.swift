@@ -23,7 +23,7 @@ enum RSError: LocalizedError {
             return "HTTP Error occurred: \(statusCode)"
             
         case .incorrectParam:
-            return nil
+            return "Incorrect param input"
         }
     }
 }

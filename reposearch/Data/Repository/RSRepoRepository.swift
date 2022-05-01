@@ -49,6 +49,7 @@ extension RSRepoRepository: RSRepoRepositoryInterface {
                                                         order: searchQuery.order,
                                                         perPage: searchQuery.perPage,
                                                         page: searchQuery.page)
+            .observe(on: ConcurrentDispatchQueueScheduler.RSRepository)
             .map { try $0.asDomain() }
     }
 }
