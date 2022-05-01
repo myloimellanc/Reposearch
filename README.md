@@ -57,3 +57,5 @@ Github Repository Search for iOS
 
 
 ## Staging, Master 병합
+- 기타 사항
+    - Personal Access Token은 Github의 보안정책으로 인해 커밋에 포함시키지 못하게 되어있으나, 과제 전형 테스트의 원활한 진행을 의도로 Base64 인코딩하여 포함시키고, 전형이 종료될 시 토큰을 만료시킬 예정 
