@@ -45,6 +45,7 @@ final class RSRepoSearchUseCase: RSUseCase {
 extension RSRepoSearchUseCase: RSRepoSearchUseCaseInterface {
     func searchRepos(searchQuery: RSRepoSearchQuery) -> Single<(repos: [RSRepo], totalCount: Int64, nextPageExists: Bool)> {
         return RSRepoRepositoryFactory.instance.getRepoSearchResult(searchQuery: searchQuery)
+            .observe(on: ConcurrentDispatchQueueScheduler.RSUseCase)
             .map { searchResult in
                 let (quotient, remainder) = searchResult.totalCount.quotientAndRemainder(dividingBy: searchQuery.perPage)
                 let lastPage = (quotient > 0)

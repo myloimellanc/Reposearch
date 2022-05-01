@@ -41,6 +41,7 @@ final class RSImageDownloadUseCase: RSUseCase {
 extension RSImageDownloadUseCase: RSImageDownloadUseCaseInterface {
     func downloadImage(url: URL) -> Single<UIImage> {
         return RSImageDownloader.shared.download(url: url)
+            .observe(on: ConcurrentDispatchQueueScheduler.RSUseCase)
             .map { $0.image }
     }
 }
