@@ -185,21 +185,15 @@ extension RSSearchListViewController: UITableViewDataSource {
                     .disposed(by: cell.disposeBag)
             }
             
-            cell.ownerLabel.text = repo.owner ?? ""
-            cell.titleLabel.text = repo.name ?? ""
+            cell.ownerLabel.attributedText = .Body2(repo.owner ?? "", with: [.foregroundColor: R.color.textGrey() as Any])
+            cell.titleLabel.attributedText = .H4(repo.name ?? "")
             
             let paragraphStyle = NSMutableParagraphStyle()
             paragraphStyle.lineHeightMultiple = 1.28
             paragraphStyle.lineBreakMode = .byWordWrapping
             
-            let attributedString = NSAttributedString(string: repo.description ?? "", attributes: [
-                .font: UIFont.systemFont(ofSize: 17.0, weight: .regular) as Any,
-                .foregroundColor: UIColor.black,
-                .paragraphStyle: paragraphStyle
-            ])
-            
-            cell.descriptionLabel.attributedText = attributedString
-            cell.starLabel.text = repo.starCount?.description ?? ""
+            cell.descriptionLabel.attributedText = .Body1(repo.description ?? "", with: [.paragraphStyle: paragraphStyle])
+            cell.starLabel.attributedText = .Body1(repo.starCount?.description ?? "", with: [.foregroundColor: R.color.textGrey() as Any])
             
             return cell
             
@@ -226,7 +220,7 @@ extension RSSearchListViewController: UITableViewDelegate {
         }
         
         let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.rsSearchTableViewCellSectionHeader.identifier) as! RSSearchTableViewCellSectionHeader
-        cell.titleLabel.text = "\(totalCount) repositories found."
+        cell.titleLabel.attributedText = .Body1("\(totalCount) repositories found.", with: [.foregroundColor: R.color.textGrey() as Any], into: .center)
         
         return cell.contentView
     }

@@ -43,7 +43,16 @@ class RSSearchContainerViewController: RSViewController<RSSearchContainerViewMod
     
     private lazy var searchController: UISearchController = {
         let searchVC = UISearchController(searchResultsController: searchListViewController)
-        searchVC.searchBar.placeholder = "Search Repositories"
+        
+        if #available(iOS 13.0, *) {
+            searchVC.searchBar.searchTextField.defaultTextAttributes = .Body1
+            searchVC.searchBar.searchTextField.typingAttributes = .Body1
+            searchVC.searchBar.searchTextField.attributedPlaceholder = .Body1("Search Repositories", with: [.foregroundColor: R.color.textLightGrey() as Any])
+            
+        } else {
+            searchVC.searchBar.placeholder = "Search Repositories"
+        }
+        
         searchVC.hidesNavigationBarDuringPresentation = true
         if #available(iOS 13.0, *) {
             searchVC.automaticallyShowsSearchResultsController = true
@@ -77,6 +86,10 @@ class RSSearchContainerViewController: RSViewController<RSSearchContainerViewMod
         self.navigationItem.title = "Reposearch"
         self.navigationItem.largeTitleDisplayMode = .always
         self.navigationItem.searchController = self.searchController
+        
+        self.perPageLabel.attributedText = .Body1("Number of result per page")
+        self.perPageSegmentedControl.setTitleTextAttributes(.Body2, for: .normal)
+        self.perPageSegmentedControl.setTitleTextAttributes(.Body2, for: .selected)
         
         self.viewModel.perPages
             .enumerated()

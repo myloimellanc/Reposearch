@@ -32,13 +32,7 @@ class RSSearchTableViewCellDefault: UITableViewCell {
         paragraphStyle.lineHeightMultiple = 1.28
         paragraphStyle.lineBreakMode = .byWordWrapping
         
-        let attributedString = NSAttributedString(string: descriptionText, attributes: [
-            .font: UIFont.systemFont(ofSize: 17.0, weight: .regular) as Any,
-            .foregroundColor: UIColor.black,
-            .paragraphStyle: paragraphStyle
-        ])
-        
-        self.testLabel.attributedText = attributedString
+        self.testLabel.attributedText = .Body1(descriptionText, with: [.paragraphStyle: paragraphStyle])
         
         let descriptionLabelHeight = self.testLabel.sizeThatFits(CGSize(width: cellWidth - 30.0, height: .infinity))
         return descriptionLabelHeight.height + 132.0
